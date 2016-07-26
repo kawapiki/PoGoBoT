@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lbCanEvolveCont = new System.Windows.Forms.Label();
             this.cbKeepPkToEvolve = new System.Windows.Forms.CheckBox();
             this.btnRecycleItems = new System.Windows.Forms.Button();
             this.btnTransferDuplicates = new System.Windows.Forms.Button();
@@ -60,6 +59,7 @@
             this.boxPokemonName = new System.Windows.Forms.TextBox();
             this.boxPokemonCaughtProb = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -69,7 +69,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.lbCanEvolveCont);
             this.groupBox1.Controls.Add(this.cbKeepPkToEvolve);
             this.groupBox1.Controls.Add(this.btnRecycleItems);
             this.groupBox1.Controls.Add(this.btnTransferDuplicates);
@@ -78,19 +77,10 @@
             this.groupBox1.Controls.Add(this.btnStartFarming);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(156, 277);
+            this.groupBox1.Size = new System.Drawing.Size(199, 285);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Bot Control";
-            // 
-            // lbCanEvolveCont
-            // 
-            this.lbCanEvolveCont.AutoSize = true;
-            this.lbCanEvolveCont.Location = new System.Drawing.Point(28, 199);
-            this.lbCanEvolveCont.Name = "lbCanEvolveCont";
-            this.lbCanEvolveCont.Size = new System.Drawing.Size(61, 13);
-            this.lbCanEvolveCont.TabIndex = 6;
-            this.lbCanEvolveCont.Text = "can Evolve";
             // 
             // cbKeepPkToEvolve
             // 
@@ -98,11 +88,11 @@
             this.cbKeepPkToEvolve.Checked = true;
             this.cbKeepPkToEvolve.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbKeepPkToEvolve.Enabled = false;
-            this.cbKeepPkToEvolve.Location = new System.Drawing.Point(9, 186);
+            this.cbKeepPkToEvolve.Location = new System.Drawing.Point(11, 191);
             this.cbKeepPkToEvolve.Name = "cbKeepPkToEvolve";
-            this.cbKeepPkToEvolve.Size = new System.Drawing.Size(125, 17);
+            this.cbKeepPkToEvolve.Size = new System.Drawing.Size(181, 17);
             this.cbKeepPkToEvolve.TabIndex = 5;
-            this.cbKeepPkToEvolve.Text = "Keep Pokemons that";
+            this.cbKeepPkToEvolve.Text = "Keep Pokemons that can evolve";
             this.cbKeepPkToEvolve.UseVisualStyleBackColor = true;
             // 
             // btnRecycleItems
@@ -110,7 +100,7 @@
             this.btnRecycleItems.Enabled = false;
             this.btnRecycleItems.Location = new System.Drawing.Point(6, 225);
             this.btnRecycleItems.Name = "btnRecycleItems";
-            this.btnRecycleItems.Size = new System.Drawing.Size(144, 46);
+            this.btnRecycleItems.Size = new System.Drawing.Size(186, 46);
             this.btnRecycleItems.TabIndex = 4;
             this.btnRecycleItems.Text = "Recycle Items";
             this.btnRecycleItems.UseVisualStyleBackColor = true;
@@ -121,7 +111,7 @@
             this.btnTransferDuplicates.Enabled = false;
             this.btnTransferDuplicates.Location = new System.Drawing.Point(6, 139);
             this.btnTransferDuplicates.Name = "btnTransferDuplicates";
-            this.btnTransferDuplicates.Size = new System.Drawing.Size(144, 46);
+            this.btnTransferDuplicates.Size = new System.Drawing.Size(187, 46);
             this.btnTransferDuplicates.TabIndex = 3;
             this.btnTransferDuplicates.Text = "Transfer Duplicate Pokemons";
             this.btnTransferDuplicates.UseVisualStyleBackColor = true;
@@ -132,7 +122,7 @@
             this.btnEvolvePokemons.Enabled = false;
             this.btnEvolvePokemons.Location = new System.Drawing.Point(6, 87);
             this.btnEvolvePokemons.Name = "btnEvolvePokemons";
-            this.btnEvolvePokemons.Size = new System.Drawing.Size(144, 46);
+            this.btnEvolvePokemons.Size = new System.Drawing.Size(187, 46);
             this.btnEvolvePokemons.TabIndex = 2;
             this.btnEvolvePokemons.Text = "Evolve Pokemons w/Candy";
             this.btnEvolvePokemons.UseVisualStyleBackColor = true;
@@ -143,7 +133,7 @@
             this.btnStopFarming.Enabled = false;
             this.btnStopFarming.Location = new System.Drawing.Point(6, 48);
             this.btnStopFarming.Name = "btnStopFarming";
-            this.btnStopFarming.Size = new System.Drawing.Size(144, 23);
+            this.btnStopFarming.Size = new System.Drawing.Size(187, 23);
             this.btnStopFarming.TabIndex = 1;
             this.btnStopFarming.Text = "Stop Farming";
             this.btnStopFarming.UseVisualStyleBackColor = true;
@@ -154,7 +144,7 @@
             this.btnStartFarming.Enabled = false;
             this.btnStartFarming.Location = new System.Drawing.Point(6, 19);
             this.btnStartFarming.Name = "btnStartFarming";
-            this.btnStartFarming.Size = new System.Drawing.Size(144, 23);
+            this.btnStartFarming.Size = new System.Drawing.Size(187, 23);
             this.btnStartFarming.TabIndex = 0;
             this.btnStartFarming.Text = "Start Farming";
             this.btnStartFarming.UseVisualStyleBackColor = true;
@@ -165,9 +155,9 @@
             this.groupBox3.Controls.Add(this.lbPkmnCaptured);
             this.groupBox3.Controls.Add(this.lbPkmnHr);
             this.groupBox3.Controls.Add(this.lbExpHour);
-            this.groupBox3.Location = new System.Drawing.Point(12, 295);
+            this.groupBox3.Location = new System.Drawing.Point(12, 415);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(156, 74);
+            this.groupBox3.Size = new System.Drawing.Size(199, 74);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Bot Stats";
@@ -209,9 +199,9 @@
             this.groupBox4.Controls.Add(this.lbExperience);
             this.groupBox4.Controls.Add(this.lbLevel);
             this.groupBox4.Controls.Add(this.lbName);
-            this.groupBox4.Location = new System.Drawing.Point(12, 375);
+            this.groupBox4.Location = new System.Drawing.Point(12, 495);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(156, 103);
+            this.groupBox4.Size = new System.Drawing.Size(199, 103);
             this.groupBox4.TabIndex = 4;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Player Information";
@@ -269,10 +259,10 @@
             // loggingBox
             // 
             this.loggingBox.Enabled = false;
-            this.loggingBox.Location = new System.Drawing.Point(174, 91);
+            this.loggingBox.Location = new System.Drawing.Point(217, 91);
             this.loggingBox.Multiline = true;
             this.loggingBox.Name = "loggingBox";
-            this.loggingBox.Size = new System.Drawing.Size(458, 387);
+            this.loggingBox.Size = new System.Drawing.Size(415, 507);
             this.loggingBox.TabIndex = 5;
             // 
             // groupBox2
@@ -283,9 +273,9 @@
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.boxPokestopName);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Location = new System.Drawing.Point(174, 12);
+            this.groupBox2.Location = new System.Drawing.Point(217, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(258, 73);
+            this.groupBox2.Size = new System.Drawing.Size(215, 73);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Current Pokestop";
@@ -293,7 +283,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(150, 48);
+            this.label10.Location = new System.Drawing.Point(126, 48);
             this.label10.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(16, 13);
@@ -303,9 +293,9 @@
             // boxPokestopCount
             // 
             this.boxPokestopCount.Enabled = false;
-            this.boxPokestopCount.Location = new System.Drawing.Point(172, 45);
+            this.boxPokestopCount.Location = new System.Drawing.Point(148, 45);
             this.boxPokestopCount.Name = "boxPokestopCount";
-            this.boxPokestopCount.Size = new System.Drawing.Size(80, 20);
+            this.boxPokestopCount.Size = new System.Drawing.Size(61, 20);
             this.boxPokestopCount.TabIndex = 8;
             this.boxPokestopCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -314,7 +304,7 @@
             this.boxPokestopInit.Enabled = false;
             this.boxPokestopInit.Location = new System.Drawing.Point(57, 45);
             this.boxPokestopInit.Name = "boxPokestopInit";
-            this.boxPokestopInit.Size = new System.Drawing.Size(87, 20);
+            this.boxPokestopInit.Size = new System.Drawing.Size(63, 20);
             this.boxPokestopInit.TabIndex = 3;
             this.boxPokestopInit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -333,7 +323,7 @@
             this.boxPokestopName.Enabled = false;
             this.boxPokestopName.Location = new System.Drawing.Point(57, 19);
             this.boxPokestopName.Name = "boxPokestopName";
-            this.boxPokestopName.Size = new System.Drawing.Size(195, 20);
+            this.boxPokestopName.Size = new System.Drawing.Size(152, 20);
             this.boxPokestopName.TabIndex = 1;
             this.boxPokestopName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -398,11 +388,23 @@
             this.label15.TabIndex = 10;
             this.label15.Text = "Name";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(447, 610);
+            this.label1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(185, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "https://github.com/WooAf/PoGoBoT";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(644, 489);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(644, 632);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.loggingBox);
@@ -411,6 +413,8 @@
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(660, 671);
+            this.MinimumSize = new System.Drawing.Size(660, 671);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PoGoBoT - GUI";
@@ -446,7 +450,6 @@
         private System.Windows.Forms.Button btnRecycleItems;
         private System.Windows.Forms.Button btnTransferDuplicates;
         private System.Windows.Forms.Button btnEvolvePokemons;
-        private System.Windows.Forms.Label lbCanEvolveCont;
         private System.Windows.Forms.CheckBox cbKeepPkToEvolve;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label10;
@@ -463,6 +466,7 @@
         private System.Windows.Forms.Label lbExperience;
         private System.Windows.Forms.Label lbItemsInventory;
         private System.Windows.Forms.Label lbPokemonsInventory;
+        private System.Windows.Forms.Label label1;
     }
 }
 

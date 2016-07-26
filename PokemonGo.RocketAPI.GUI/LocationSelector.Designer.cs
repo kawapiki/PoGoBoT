@@ -124,6 +124,7 @@
             this.MainMap.Size = new System.Drawing.Size(698, 544);
             this.MainMap.TabIndex = 9;
             this.MainMap.Zoom = 0D;
+            this.MainMap.Load += new System.EventHandler(this.MainMap_Load_1);
             // 
             // LocationSelector
             // 

@@ -254,7 +254,6 @@ namespace PokemonGo.RocketAPI.GUI
             btnRecycleItems.Enabled = false;
             btnTransferDuplicates.Enabled = false;
             cbKeepPkToEvolve.Enabled = false;
-            lbCanEvolveCont.Enabled = false;
 
 
             btnStopFarming.Enabled = true;
@@ -273,7 +272,6 @@ namespace PokemonGo.RocketAPI.GUI
             btnRecycleItems.Enabled = true;
             btnTransferDuplicates.Enabled = true;
             cbKeepPkToEvolve.Enabled = true;
-            lbCanEvolveCont.Enabled = true;
 
             btnStopFarming.Enabled = false;
 

@@ -135,5 +135,10 @@ namespace PokemonGo.RocketAPI.GUI
         {
 
         }
+
+        private void MainMap_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
