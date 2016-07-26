@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 
 namespace PokemonGo.RocketAPI.GUI
 {
@@ -30,6 +31,7 @@ namespace PokemonGo.RocketAPI.GUI
         {
             loginSelected = true;
             auth = AuthType.Ptc;
+
             this.Hide();
         }
 
