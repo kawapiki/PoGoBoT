@@ -15,6 +15,7 @@ using PokemonGo.RocketAPI.GeneratedCode;
 using PokemonGo.RocketAPI.Extensions;
 using PokemonGo.RocketAPI.Logic.Utils;
 using System.IO;
+using static PokemonGo.RocketAPI.GeneratedCode.PokemonId;
 
 namespace PokemonGo.RocketAPI.GUI
 {
@@ -767,6 +768,30 @@ namespace PokemonGo.RocketAPI.GUI
         private async void btnLuckyEgg_Click(object sender, EventArgs e)
         {
             await UseLuckyEgg();
+        }
+
+        private async void button2_Click(object sender, EventArgs e)
+        {
+            var stuff = await inventory.GetPlayerStats();
+            var stats = stuff.FirstOrDefault();
+            MessageBox.Show($"Battle Attack Won: {stats.BattleAttackTotal}\n" +
+            $"Battle Attack Total: {stats.BattleAttackTotal}\n" +
+            $"Battle Defended Won: {stats.BattleDefendedWon}\n" +
+            $"Battle Training Won: {stats.BattleTrainingWon}\n" +
+            $"Battle Training Total: {stats.BattleTrainingTotal}\n" +
+            $"Big Magikarp Caught: {stats.BigMagikarpCaught}\n" +
+            $"Eggs Hatched: {stats.EggsHatched}\n" +
+            $"Evolutions: {stats.Evolutions}\n" +
+            $"Km Walked: {stats.KmWalked}\n" +
+            $"Pokestops Visited: {stats.PokeStopVisits}\n" +
+            $"Pokeballs Thrown: {stats.PokeballsThrown}\n" +
+            $"Pokemon Deployed: {stats.PokemonDeployed}\n" +
+            $"Pokemon Captured: {stats.PokemonsCaptured}\n" +
+            $"Pokemon Encountered: {stats.PokemonsEncountered}\n" +
+            $"Prestige Dropped Total: {stats.PrestigeDroppedTotal}\n" +
+            $"Prestige Raised Total: {stats.PrestigeRaisedTotal}\n" +
+            $"Small Rattata Caught: {stats.SmallRattataCaught}\n" +
+            $"Unique Pokedex Entries: {stats.UniquePokedexEntries}");
         }
     }
 }

@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbEvolveFarming = new System.Windows.Forms.CheckBox();
             this.btnLuckyEgg = new System.Windows.Forms.Button();
             this.cbKeepPkToEvolve = new System.Windows.Forms.CheckBox();
             this.btnRecycleItems = new System.Windows.Forms.Button();
@@ -61,7 +62,8 @@
             this.boxPokemonCaughtProb = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.cbEvolveFarming = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -85,6 +87,19 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Control";
+            // 
+            // cbEvolveFarming
+            // 
+            this.cbEvolveFarming.AutoSize = true;
+            this.cbEvolveFarming.Checked = true;
+            this.cbEvolveFarming.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbEvolveFarming.Enabled = false;
+            this.cbEvolveFarming.Location = new System.Drawing.Point(6, 48);
+            this.cbEvolveFarming.Name = "cbEvolveFarming";
+            this.cbEvolveFarming.Size = new System.Drawing.Size(162, 17);
+            this.cbEvolveFarming.TabIndex = 9;
+            this.cbEvolveFarming.Text = "Evolve / Transfer Pokemons";
+            this.cbEvolveFarming.UseVisualStyleBackColor = true;
             // 
             // btnLuckyEgg
             // 
@@ -414,18 +429,24 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "https://github.com/WooAf/PoGoBoT";
             // 
-            // cbEvolveFarming
+            // button1
             // 
-            this.cbEvolveFarming.AutoSize = true;
-            this.cbEvolveFarming.Checked = true;
-            this.cbEvolveFarming.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbEvolveFarming.Enabled = false;
-            this.cbEvolveFarming.Location = new System.Drawing.Point(6, 48);
-            this.cbEvolveFarming.Name = "cbEvolveFarming";
-            this.cbEvolveFarming.Size = new System.Drawing.Size(162, 17);
-            this.cbEvolveFarming.TabIndex = 9;
-            this.cbEvolveFarming.Text = "Evolve / Transfer Pokemons";
-            this.cbEvolveFarming.UseVisualStyleBackColor = true;
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(12, 600);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(199, 23);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "More Information";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // MainForm
             // 
@@ -433,6 +454,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(644, 632);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox2);
@@ -498,6 +521,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnLuckyEgg;
         private System.Windows.Forms.CheckBox cbEvolveFarming;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
 
