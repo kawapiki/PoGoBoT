@@ -28,5 +28,5 @@ Chatting about this Repository can be done on our Discord: https://discord.gg/be
 <h2><a name="credits">Credits</a></h2>
 This release is based on Necro and Feroxs source.
 
-<h2>'a name="faq">FAQ</a></h2>
+<h2><a name="faq">FAQ</a></h2>
 You need .NET Framework 4.5 to run this (https://www.microsoft.com/en-ca/download/details.aspx?id=30653)
