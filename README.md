@@ -1,4 +1,9 @@
 <!-- title -->
+
+<h1>PREPARING V2 WITH GUI</h1>
+
+<br><br>
+
 <h1>A Pokemon Go Bot based on FeroxRevs API</h1>
 <!-- disclaimer -->
 <strong><em>The contents of this repo are a proof of concept and are for educational use only</em></strong>
