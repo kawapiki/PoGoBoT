@@ -17,16 +17,7 @@ namespace PoGoBoT.Logic.State
 
         public IState Execute(Context ctx, StateMachine machine)
         {
-            if (IsLatest())
-            {
-                machine.Fire(new NoticeEvent
-                {
-                    Message =
-                        "Awesome! You have already got the newest version! " +
-                        Assembly.GetExecutingAssembly().GetName().Version
-                });
-            }
-            else
+            if (!IsLatest())
             {
                 machine.Fire(new WarnEvent
                 {
