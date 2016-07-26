@@ -60,6 +60,7 @@
             this.boxPokemonCaughtProb = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnLuckyEgg = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -69,6 +70,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnLuckyEgg);
             this.groupBox1.Controls.Add(this.cbKeepPkToEvolve);
             this.groupBox1.Controls.Add(this.btnRecycleItems);
             this.groupBox1.Controls.Add(this.btnTransferDuplicates);
@@ -77,10 +79,10 @@
             this.groupBox1.Controls.Add(this.btnStartFarming);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(199, 285);
+            this.groupBox1.Size = new System.Drawing.Size(199, 348);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Bot Control";
+            this.groupBox1.Text = "Control";
             // 
             // cbKeepPkToEvolve
             // 
@@ -88,7 +90,7 @@
             this.cbKeepPkToEvolve.Checked = true;
             this.cbKeepPkToEvolve.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbKeepPkToEvolve.Enabled = false;
-            this.cbKeepPkToEvolve.Location = new System.Drawing.Point(11, 191);
+            this.cbKeepPkToEvolve.Location = new System.Drawing.Point(6, 269);
             this.cbKeepPkToEvolve.Name = "cbKeepPkToEvolve";
             this.cbKeepPkToEvolve.Size = new System.Drawing.Size(181, 17);
             this.cbKeepPkToEvolve.TabIndex = 5;
@@ -98,9 +100,9 @@
             // btnRecycleItems
             // 
             this.btnRecycleItems.Enabled = false;
-            this.btnRecycleItems.Location = new System.Drawing.Point(6, 225);
+            this.btnRecycleItems.Location = new System.Drawing.Point(6, 292);
             this.btnRecycleItems.Name = "btnRecycleItems";
-            this.btnRecycleItems.Size = new System.Drawing.Size(186, 46);
+            this.btnRecycleItems.Size = new System.Drawing.Size(187, 46);
             this.btnRecycleItems.TabIndex = 4;
             this.btnRecycleItems.Text = "Recycle Items";
             this.btnRecycleItems.UseVisualStyleBackColor = true;
@@ -109,7 +111,7 @@
             // btnTransferDuplicates
             // 
             this.btnTransferDuplicates.Enabled = false;
-            this.btnTransferDuplicates.Location = new System.Drawing.Point(6, 139);
+            this.btnTransferDuplicates.Location = new System.Drawing.Point(6, 217);
             this.btnTransferDuplicates.Name = "btnTransferDuplicates";
             this.btnTransferDuplicates.Size = new System.Drawing.Size(187, 46);
             this.btnTransferDuplicates.TabIndex = 3;
@@ -120,7 +122,7 @@
             // btnEvolvePokemons
             // 
             this.btnEvolvePokemons.Enabled = false;
-            this.btnEvolvePokemons.Location = new System.Drawing.Point(6, 87);
+            this.btnEvolvePokemons.Location = new System.Drawing.Point(6, 165);
             this.btnEvolvePokemons.Name = "btnEvolvePokemons";
             this.btnEvolvePokemons.Size = new System.Drawing.Size(187, 46);
             this.btnEvolvePokemons.TabIndex = 2;
@@ -160,7 +162,7 @@
             this.groupBox3.Size = new System.Drawing.Size(199, 74);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Bot Stats";
+            this.groupBox3.Text = "Stats";
             // 
             // lbPkmnCaptured
             // 
@@ -204,7 +206,7 @@
             this.groupBox4.Size = new System.Drawing.Size(199, 103);
             this.groupBox4.TabIndex = 4;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Player Information";
+            this.groupBox4.Text = "Information";
             // 
             // lbItemsInventory
             // 
@@ -398,6 +400,18 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "https://github.com/WooAf/PoGoBoT";
             // 
+            // btnLuckyEgg
+            // 
+            this.btnLuckyEgg.Enabled = false;
+            this.btnLuckyEgg.Location = new System.Drawing.Point(6, 77);
+            this.btnLuckyEgg.Name = "btnLuckyEgg";
+            this.btnLuckyEgg.Size = new System.Drawing.Size(187, 23);
+            this.btnLuckyEgg.TabIndex = 8;
+            this.btnLuckyEgg.Text = "Use Lucky egg";
+            this.btnLuckyEgg.UseVisualStyleBackColor = true;
+            this.btnLuckyEgg.Visible = false;
+            this.btnLuckyEgg.Click += new System.EventHandler(this.btnLuckyEgg_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -467,6 +481,7 @@
         private System.Windows.Forms.Label lbItemsInventory;
         private System.Windows.Forms.Label lbPokemonsInventory;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnLuckyEgg;
     }
 }
 

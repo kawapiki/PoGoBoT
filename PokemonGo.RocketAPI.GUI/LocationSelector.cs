@@ -98,15 +98,19 @@ namespace PokemonGo.RocketAPI.GUI
             boxLng.Text = lng.ToString("0.000000");
         }
 
+
+       
         private void btnSetLocation_Click(object sender, EventArgs e)
         {
             // Persist the Position
             lat = MainMap.Position.Lat;
             lng = MainMap.Position.Lng;
 
+           
+
             // User Settings
-            UserSettings.Default.DefaultLatitude = lat;
-            UserSettings.Default.DefaultLongitude = lng;
+            UserSettings.Default.DefaultLatitude = Convert.ToDouble(boxLat.Text);
+            UserSettings.Default.DefaultLongitude = Convert.ToDouble(boxLng.Text);
             UserSettings.Default.Save();
 
             // Confirm Position Selection
@@ -115,6 +119,8 @@ namespace PokemonGo.RocketAPI.GUI
             // Close this Window
             this.Hide();
         }
+
+
 
         private void comboLocations_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -137,6 +143,11 @@ namespace PokemonGo.RocketAPI.GUI
         }
 
         private void MainMap_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void boxLat_TextChanged(object sender, EventArgs e)
         {
 
         }

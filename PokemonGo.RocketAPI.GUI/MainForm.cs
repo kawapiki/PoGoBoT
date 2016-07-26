@@ -257,6 +257,7 @@ namespace PokemonGo.RocketAPI.GUI
 
 
             btnStopFarming.Enabled = true;
+            btnLuckyEgg.Enabled = true;
 
             // Setup the Timer
             isFarmingActive = true;
@@ -274,6 +275,7 @@ namespace PokemonGo.RocketAPI.GUI
             cbKeepPkToEvolve.Enabled = true;
 
             btnStopFarming.Enabled = false;
+            btnLuckyEgg.Enabled = false;
 
             // Close the Timer
             isFarmingActive = false;
@@ -636,6 +638,21 @@ namespace PokemonGo.RocketAPI.GUI
             await Task.Delay(3000);
         }
 
+        public async Task UseLuckyEgg()
+        {
+            var inventoryItems = await inventory.GetItems();
+            var luckyEggs = inventoryItems.Where(p => (ItemId)p.Item_ == ItemId.ItemLuckyEgg);
+            var luckyEgg = luckyEggs.FirstOrDefault();
+
+            if (luckyEgg == null)
+                return;
+
+            var useLuckyEgg = await client.UseItemExpBoost(ItemId.ItemLuckyEgg);
+            Logger.Write($"Used LuckyEgg. Remaining: {luckyEgg.Count - 1}", LogLevel.Info);
+
+            await GetCurrentPlayerInformation();
+        }
+
         private async Task ExecuteFarmingPokestopsAndPokemons()
         {
             var mapObjects = await client.GetMapObjects();
@@ -738,6 +755,11 @@ namespace PokemonGo.RocketAPI.GUI
                 Logger.Write("Waiting 10 seconds before moving to the next Pokemon.");
                 await Task.Delay(10000);
             }
+        }
+
+        private async void btnLuckyEgg_Click(object sender, EventArgs e)
+        {
+            await UseLuckyEgg();
         }
     }
 }
