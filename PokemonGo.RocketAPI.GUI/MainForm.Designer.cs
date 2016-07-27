@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnUseIncense = new System.Windows.Forms.Button();
-            this.cbTransferFarming = new System.Windows.Forms.CheckBox();
             this.btnLuckyEgg = new System.Windows.Forms.Button();
             this.cbKeepPkToEvolve = new System.Windows.Forms.CheckBox();
             this.btnRecycleItems = new System.Windows.Forms.Button();
@@ -44,6 +43,7 @@
             this.lbPkmnHr = new System.Windows.Forms.Label();
             this.lbExpHour = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnExtraPlayerInformation = new System.Windows.Forms.Button();
             this.lbIncense = new System.Windows.Forms.Label();
             this.lbLuckyEggs = new System.Windows.Forms.Label();
             this.lbItemsInventory = new System.Windows.Forms.Label();
@@ -51,6 +51,7 @@
             this.lbExperience = new System.Windows.Forms.Label();
             this.lbLevel = new System.Windows.Forms.Label();
             this.lbName = new System.Windows.Forms.Label();
+            this.dGrid = new System.Windows.Forms.DataGridView();
             this.loggingBox = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -64,16 +65,19 @@
             this.boxPokemonName = new System.Windows.Forms.TextBox();
             this.boxPokemonCaughtProb = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.dGrid = new System.Windows.Forms.DataGridView();
+            this.btnMyPokemon = new System.Windows.Forms.Button();
+            this.lbcopyright = new System.Windows.Forms.Label();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.btnadvoptions = new System.Windows.Forms.Button();
             this.cbEvolveFarming = new System.Windows.Forms.CheckBox();
+            this.cbTransferFarming = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGrid)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dGrid)).BeginInit();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -82,52 +86,36 @@
             this.groupBox1.Controls.Add(this.btnUseIncense);
             this.groupBox1.Controls.Add(this.cbTransferFarming);
             this.groupBox1.Controls.Add(this.btnLuckyEgg);
-            this.groupBox1.Controls.Add(this.cbKeepPkToEvolve);
-            this.groupBox1.Controls.Add(this.btnRecycleItems);
-            this.groupBox1.Controls.Add(this.btnTransferDuplicates);
-            this.groupBox1.Controls.Add(this.btnEvolvePokemons);
             this.groupBox1.Controls.Add(this.btnStopFarming);
             this.groupBox1.Controls.Add(this.btnStartFarming);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(199, 397);
+            this.groupBox1.Size = new System.Drawing.Size(201, 176);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Control";
+            this.groupBox1.Text = "Farming Control";
             // 
             // btnUseIncense
             // 
             this.btnUseIncense.Enabled = false;
-            this.btnUseIncense.Location = new System.Drawing.Point(6, 153);
+            this.btnUseIncense.Location = new System.Drawing.Point(6, 147);
             this.btnUseIncense.Name = "btnUseIncense";
-            this.btnUseIncense.Size = new System.Drawing.Size(187, 23);
-            this.btnUseIncense.TabIndex = 12;
+            this.btnUseIncense.Size = new System.Drawing.Size(189, 23);
+            this.btnUseIncense.TabIndex = 8;
             this.btnUseIncense.Text = "Use Incense";
             this.btnUseIncense.UseVisualStyleBackColor = true;
-            this.btnUseIncense.Click += new System.EventHandler(this.btnUseIncense_Click_1);
-            // 
-            // cbTransferFarming
-            // 
-            this.cbTransferFarming.AutoSize = true;
-            this.cbTransferFarming.Checked = true;
-            this.cbTransferFarming.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbTransferFarming.Location = new System.Drawing.Point(6, 48);
-            this.cbTransferFarming.Name = "cbTransferFarming";
-            this.cbTransferFarming.Size = new System.Drawing.Size(118, 17);
-            this.cbTransferFarming.TabIndex = 9;
-            this.cbTransferFarming.Text = "Transfer Pokemons";
-            this.cbTransferFarming.UseVisualStyleBackColor = true;
+            this.btnUseIncense.Click += new System.EventHandler(this.btnUseIncense_Click);
             // 
             // btnLuckyEgg
             // 
             this.btnLuckyEgg.Enabled = false;
-            this.btnLuckyEgg.Location = new System.Drawing.Point(6, 124);
+            this.btnLuckyEgg.Location = new System.Drawing.Point(6, 120);
             this.btnLuckyEgg.Name = "btnLuckyEgg";
-            this.btnLuckyEgg.Size = new System.Drawing.Size(187, 23);
-            this.btnLuckyEgg.TabIndex = 11;
+            this.btnLuckyEgg.Size = new System.Drawing.Size(189, 23);
+            this.btnLuckyEgg.TabIndex = 7;
             this.btnLuckyEgg.Text = "Use Lucky egg";
             this.btnLuckyEgg.UseVisualStyleBackColor = true;
-            this.btnLuckyEgg.Click += new System.EventHandler(this.btnLuckyEgg_Click_1);
+            this.btnLuckyEgg.Click += new System.EventHandler(this.btnLuckyEgg_Click);
             // 
             // cbKeepPkToEvolve
             // 
@@ -135,7 +123,7 @@
             this.cbKeepPkToEvolve.Checked = true;
             this.cbKeepPkToEvolve.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbKeepPkToEvolve.Enabled = false;
-            this.cbKeepPkToEvolve.Location = new System.Drawing.Point(6, 317);
+            this.cbKeepPkToEvolve.Location = new System.Drawing.Point(7, 123);
             this.cbKeepPkToEvolve.Name = "cbKeepPkToEvolve";
             this.cbKeepPkToEvolve.Size = new System.Drawing.Size(181, 17);
             this.cbKeepPkToEvolve.TabIndex = 5;
@@ -145,9 +133,9 @@
             // btnRecycleItems
             // 
             this.btnRecycleItems.Enabled = false;
-            this.btnRecycleItems.Location = new System.Drawing.Point(6, 340);
+            this.btnRecycleItems.Location = new System.Drawing.Point(6, 146);
             this.btnRecycleItems.Name = "btnRecycleItems";
-            this.btnRecycleItems.Size = new System.Drawing.Size(187, 46);
+            this.btnRecycleItems.Size = new System.Drawing.Size(189, 46);
             this.btnRecycleItems.TabIndex = 4;
             this.btnRecycleItems.Text = "Recycle Items";
             this.btnRecycleItems.UseVisualStyleBackColor = true;
@@ -156,9 +144,9 @@
             // btnTransferDuplicates
             // 
             this.btnTransferDuplicates.Enabled = false;
-            this.btnTransferDuplicates.Location = new System.Drawing.Point(6, 265);
+            this.btnTransferDuplicates.Location = new System.Drawing.Point(6, 71);
             this.btnTransferDuplicates.Name = "btnTransferDuplicates";
-            this.btnTransferDuplicates.Size = new System.Drawing.Size(187, 46);
+            this.btnTransferDuplicates.Size = new System.Drawing.Size(189, 46);
             this.btnTransferDuplicates.TabIndex = 3;
             this.btnTransferDuplicates.Text = "Transfer Duplicate Pokemons";
             this.btnTransferDuplicates.UseVisualStyleBackColor = true;
@@ -167,9 +155,9 @@
             // btnEvolvePokemons
             // 
             this.btnEvolvePokemons.Enabled = false;
-            this.btnEvolvePokemons.Location = new System.Drawing.Point(6, 213);
+            this.btnEvolvePokemons.Location = new System.Drawing.Point(6, 19);
             this.btnEvolvePokemons.Name = "btnEvolvePokemons";
-            this.btnEvolvePokemons.Size = new System.Drawing.Size(187, 46);
+            this.btnEvolvePokemons.Size = new System.Drawing.Size(189, 46);
             this.btnEvolvePokemons.TabIndex = 2;
             this.btnEvolvePokemons.Text = "Evolve Pokemons w/Candy";
             this.btnEvolvePokemons.UseVisualStyleBackColor = true;
@@ -178,9 +166,9 @@
             // btnStopFarming
             // 
             this.btnStopFarming.Enabled = false;
-            this.btnStopFarming.Location = new System.Drawing.Point(6, 95);
+            this.btnStopFarming.Location = new System.Drawing.Point(6, 91);
             this.btnStopFarming.Name = "btnStopFarming";
-            this.btnStopFarming.Size = new System.Drawing.Size(187, 23);
+            this.btnStopFarming.Size = new System.Drawing.Size(189, 23);
             this.btnStopFarming.TabIndex = 1;
             this.btnStopFarming.Text = "Stop Farming";
             this.btnStopFarming.UseVisualStyleBackColor = true;
@@ -189,9 +177,9 @@
             // btnStartFarming
             // 
             this.btnStartFarming.Enabled = false;
-            this.btnStartFarming.Location = new System.Drawing.Point(6, 19);
+            this.btnStartFarming.Location = new System.Drawing.Point(6, 22);
             this.btnStartFarming.Name = "btnStartFarming";
-            this.btnStartFarming.Size = new System.Drawing.Size(187, 23);
+            this.btnStartFarming.Size = new System.Drawing.Size(189, 23);
             this.btnStartFarming.TabIndex = 0;
             this.btnStartFarming.Text = "Start Farming";
             this.btnStartFarming.UseVisualStyleBackColor = true;
@@ -202,9 +190,9 @@
             this.groupBox3.Controls.Add(this.lbPkmnCaptured);
             this.groupBox3.Controls.Add(this.lbPkmnHr);
             this.groupBox3.Controls.Add(this.lbExpHour);
-            this.groupBox3.Location = new System.Drawing.Point(12, 415);
+            this.groupBox3.Location = new System.Drawing.Point(12, 406);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(199, 74);
+            this.groupBox3.Size = new System.Drawing.Size(201, 74);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Stats";
@@ -241,6 +229,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.btnExtraPlayerInformation);
             this.groupBox4.Controls.Add(this.lbIncense);
             this.groupBox4.Controls.Add(this.lbLuckyEggs);
             this.groupBox4.Controls.Add(this.lbItemsInventory);
@@ -248,12 +237,24 @@
             this.groupBox4.Controls.Add(this.lbExperience);
             this.groupBox4.Controls.Add(this.lbLevel);
             this.groupBox4.Controls.Add(this.lbName);
-            this.groupBox4.Location = new System.Drawing.Point(12, 495);
+            this.groupBox4.Location = new System.Drawing.Point(12, 486);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(199, 134);
+            this.groupBox4.Size = new System.Drawing.Size(201, 136);
             this.groupBox4.TabIndex = 4;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Information";
+            // 
+            // btnExtraPlayerInformation
+            // 
+            this.btnExtraPlayerInformation.Enabled = false;
+            this.btnExtraPlayerInformation.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExtraPlayerInformation.Location = new System.Drawing.Point(142, 99);
+            this.btnExtraPlayerInformation.Name = "btnExtraPlayerInformation";
+            this.btnExtraPlayerInformation.Size = new System.Drawing.Size(54, 30);
+            this.btnExtraPlayerInformation.TabIndex = 7;
+            this.btnExtraPlayerInformation.Text = "Extra";
+            this.btnExtraPlayerInformation.UseVisualStyleBackColor = true;
+            this.btnExtraPlayerInformation.Click += new System.EventHandler(this.btnExtraPlayerInformation_Click);
             // 
             // lbIncense
             // 
@@ -325,13 +326,26 @@
             this.lbName.TabIndex = 0;
             this.lbName.Text = "lbName";
             // 
+            // dGrid
+            // 
+            this.dGrid.AllowUserToAddRows = false;
+            this.dGrid.AllowUserToDeleteRows = false;
+            this.dGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGrid.Location = new System.Drawing.Point(219, 91);
+            this.dGrid.Name = "dGrid";
+            this.dGrid.ReadOnly = true;
+            this.dGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dGrid.Size = new System.Drawing.Size(413, 260);
+            this.dGrid.TabIndex = 0;
+            // 
             // loggingBox
             // 
-            this.loggingBox.Location = new System.Drawing.Point(217, 362);
+            this.loggingBox.Location = new System.Drawing.Point(219, 357);
             this.loggingBox.Multiline = true;
             this.loggingBox.Name = "loggingBox";
             this.loggingBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.loggingBox.Size = new System.Drawing.Size(415, 278);
+            this.loggingBox.Size = new System.Drawing.Size(413, 265);
             this.loggingBox.TabIndex = 5;
             // 
             // groupBox2
@@ -342,9 +356,9 @@
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.boxPokestopName);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Location = new System.Drawing.Point(217, 12);
+            this.groupBox2.Location = new System.Drawing.Point(219, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(215, 73);
+            this.groupBox2.Size = new System.Drawing.Size(213, 73);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Current Pokestop";
@@ -352,7 +366,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(126, 48);
+            this.label10.Location = new System.Drawing.Point(124, 50);
             this.label10.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(16, 13);
@@ -362,9 +376,9 @@
             // boxPokestopCount
             // 
             this.boxPokestopCount.Enabled = false;
-            this.boxPokestopCount.Location = new System.Drawing.Point(148, 45);
+            this.boxPokestopCount.Location = new System.Drawing.Point(144, 45);
             this.boxPokestopCount.Name = "boxPokestopCount";
-            this.boxPokestopCount.Size = new System.Drawing.Size(61, 20);
+            this.boxPokestopCount.Size = new System.Drawing.Size(63, 20);
             this.boxPokestopCount.TabIndex = 8;
             this.boxPokestopCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -392,7 +406,7 @@
             this.boxPokestopName.Enabled = false;
             this.boxPokestopName.Location = new System.Drawing.Point(57, 19);
             this.boxPokestopName.Name = "boxPokestopName";
-            this.boxPokestopName.Size = new System.Drawing.Size(152, 20);
+            this.boxPokestopName.Size = new System.Drawing.Size(150, 20);
             this.boxPokestopName.TabIndex = 1;
             this.boxPokestopName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -457,63 +471,85 @@
             this.label15.TabIndex = 10;
             this.label15.Text = "Name";
             // 
-            // label1
+            // btnMyPokemon
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(447, 648);
-            this.label1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(185, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "https://github.com/WooAf/PoGoBoT";
+            this.btnMyPokemon.Enabled = false;
+            this.btnMyPokemon.Location = new System.Drawing.Point(219, 628);
+            this.btnMyPokemon.Name = "btnMyPokemon";
+            this.btnMyPokemon.Size = new System.Drawing.Size(413, 23);
+            this.btnMyPokemon.TabIndex = 8;
+            this.btnMyPokemon.Text = "My Pokemon";
+            this.btnMyPokemon.UseVisualStyleBackColor = true;
+            this.btnMyPokemon.Click += new System.EventHandler(this.btnMyPokemon_Click);
             // 
-            // button2
+            // lbcopyright
             // 
-            this.button2.Location = new System.Drawing.Point(12, 635);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(199, 23);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "More Information";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.lbcopyright.AutoSize = true;
+            this.lbcopyright.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbcopyright.Location = new System.Drawing.Point(523, 660);
+            this.lbcopyright.Name = "lbcopyright";
+            this.lbcopyright.Size = new System.Drawing.Size(119, 7);
+            this.lbcopyright.TabIndex = 9;
+            this.lbcopyright.Text = "https://github.com/WooAf/PoGoBoT";
             // 
-            // dGrid
+            // groupBox6
             // 
-            this.dGrid.AllowUserToAddRows = false;
-            this.dGrid.AllowUserToDeleteRows = false;
-            this.dGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGrid.Location = new System.Drawing.Point(217, 91);
-            this.dGrid.Name = "dGrid";
-            this.dGrid.ReadOnly = true;
-            this.dGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dGrid.Size = new System.Drawing.Size(415, 265);
-            this.dGrid.TabIndex = 10;
+            this.groupBox6.Controls.Add(this.btnRecycleItems);
+            this.groupBox6.Controls.Add(this.btnEvolvePokemons);
+            this.groupBox6.Controls.Add(this.cbKeepPkToEvolve);
+            this.groupBox6.Controls.Add(this.btnTransferDuplicates);
+            this.groupBox6.Location = new System.Drawing.Point(12, 194);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(201, 206);
+            this.groupBox6.TabIndex = 9;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Trainer Control";
+            // 
+            // btnadvoptions
+            // 
+            this.btnadvoptions.Enabled = false;
+            this.btnadvoptions.Location = new System.Drawing.Point(12, 628);
+            this.btnadvoptions.Name = "btnadvoptions";
+            this.btnadvoptions.Size = new System.Drawing.Size(201, 23);
+            this.btnadvoptions.TabIndex = 13;
+            this.btnadvoptions.Text = "Advanced Options";
+            this.btnadvoptions.UseVisualStyleBackColor = true;
             // 
             // cbEvolveFarming
             // 
             this.cbEvolveFarming.AutoSize = true;
-            this.cbEvolveFarming.Checked = true;
-            this.cbEvolveFarming.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbEvolveFarming.Location = new System.Drawing.Point(6, 67);
+            this.cbEvolveFarming.Enabled = false;
+            this.cbEvolveFarming.Location = new System.Drawing.Point(7, 68);
             this.cbEvolveFarming.Name = "cbEvolveFarming";
             this.cbEvolveFarming.Size = new System.Drawing.Size(112, 17);
-            this.cbEvolveFarming.TabIndex = 13;
+            this.cbEvolveFarming.TabIndex = 15;
             this.cbEvolveFarming.Text = "Evolve Pokemons";
             this.cbEvolveFarming.UseVisualStyleBackColor = true;
+            // 
+            // cbTransferFarming
+            // 
+            this.cbTransferFarming.AutoSize = true;
+            this.cbTransferFarming.Enabled = false;
+            this.cbTransferFarming.Location = new System.Drawing.Point(7, 49);
+            this.cbTransferFarming.Name = "cbTransferFarming";
+            this.cbTransferFarming.Size = new System.Drawing.Size(118, 17);
+            this.cbTransferFarming.TabIndex = 14;
+            this.cbTransferFarming.Text = "Transfer Pokemons";
+            this.cbTransferFarming.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(644, 670);
-            this.Controls.Add(this.dGrid);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnadvoptions);
+            this.Controls.Add(this.groupBox6);
+            this.Controls.Add(this.lbcopyright);
+            this.Controls.Add(this.btnMyPokemon);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.loggingBox);
+            this.Controls.Add(this.dGrid);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
@@ -531,11 +567,13 @@
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGrid)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dGrid)).EndInit();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -553,6 +591,7 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label lbLevel;
         private System.Windows.Forms.Label lbName;
+        private System.Windows.Forms.DataGridView dGrid;
         private System.Windows.Forms.TextBox loggingBox;
         private System.Windows.Forms.Button btnRecycleItems;
         private System.Windows.Forms.Button btnTransferDuplicates;
@@ -573,15 +612,17 @@
         private System.Windows.Forms.Label lbExperience;
         private System.Windows.Forms.Label lbItemsInventory;
         private System.Windows.Forms.Label lbPokemonsInventory;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox cbTransferFarming;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DataGridView dGrid;
-        private System.Windows.Forms.Button btnUseIncense;
         private System.Windows.Forms.Button btnLuckyEgg;
         private System.Windows.Forms.Label lbLuckyEggs;
         private System.Windows.Forms.Label lbIncense;
+        private System.Windows.Forms.Button btnUseIncense;
+        private System.Windows.Forms.Button btnExtraPlayerInformation;
+        private System.Windows.Forms.Button btnMyPokemon;
+        private System.Windows.Forms.Label lbcopyright;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Button btnadvoptions;
         private System.Windows.Forms.CheckBox cbEvolveFarming;
+        private System.Windows.Forms.CheckBox cbTransferFarming;
     }
 }
 

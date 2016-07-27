@@ -45,9 +45,9 @@ namespace PokemonGo.RocketAPI.GUI
             comboLocations.Items.Add(new Loc() { name = "Bryant Park, NY, USA", lat = 40.75320648472645, lng = -73.98390769958496 });
             comboLocations.Items.Add(new Loc() { name = "Vancouver, BC, Canada", lat = 45.6298963412979, lng = -122.67196521162987 });
             comboLocations.Items.Add(new Loc() { name = "Sydney, Australia", lat = -33.870273020353416, lng = 151.20878219604492 });
-            comboLocations.Items.Add(new Loc() { name = "Achen, Germany", lat = 50.776309, lng = 6.083505 });
-            comboLocations.Items.Add(new Loc() { name = "Hamburg, Germany", lat = 53.5588061, lng = 10.057689399999958 });
-            comboLocations.Items.Add(new Loc() { name = "Dusseldorf, Germany", lat = 51.224382, lng = 6.778896 });
+            comboLocations.Items.Add(new Loc() { name = "Achen, Germany", lat = 50.776309, lng = 6.083505  });
+            comboLocations.Items.Add(new Loc() { name = "Hamburg, Germany", lat = 53.5588061, lng = 10.057689399999958  });
+            comboLocations.Items.Add(new Loc() { name = "Dusseldorf, Germany", lat = 51.224382, lng = 6.778896   });
             comboLocations.Items.Add(new Loc() { name = "Tokyo, Japan", lat = 35.69051125265253, lng = 139.68954205513 });
         }        
 
@@ -98,15 +98,11 @@ namespace PokemonGo.RocketAPI.GUI
             boxLng.Text = lng.ToString("0.000000");
         }
 
-
-       
         private void btnSetLocation_Click(object sender, EventArgs e)
         {
             // Persist the Position
             lat = MainMap.Position.Lat;
             lng = MainMap.Position.Lng;
-
-           
 
             // User Settings
             UserSettings.Default.DefaultLatitude = Convert.ToDouble(boxLat.Text);
@@ -119,8 +115,6 @@ namespace PokemonGo.RocketAPI.GUI
             // Close this Window
             this.Hide();
         }
-
-
 
         private void comboLocations_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -138,16 +132,6 @@ namespace PokemonGo.RocketAPI.GUI
         }
 
         private void MainMap_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MainMap_Load_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void boxLat_TextChanged(object sender, EventArgs e)
         {
 
         }

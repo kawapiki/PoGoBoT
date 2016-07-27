@@ -1,5 +1,4 @@
-﻿/*
-#region
+﻿#region
 
 using System;
 using System.Net;
@@ -55,4 +54,3 @@ namespace PokemonGo.RocketAPI.Helpers
         }
     }
 }
-*/

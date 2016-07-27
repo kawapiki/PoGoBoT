@@ -41,15 +41,14 @@
             // 
             // boxLat
             // 
-            this.boxLat.Location = new System.Drawing.Point(368, 565);
+            this.boxLat.Location = new System.Drawing.Point(377, 562);
             this.boxLat.Name = "boxLat";
             this.boxLat.Size = new System.Drawing.Size(87, 20);
             this.boxLat.TabIndex = 2;
-            this.boxLat.TextChanged += new System.EventHandler(this.boxLat_TextChanged);
             // 
             // boxLng
             // 
-            this.boxLng.Location = new System.Drawing.Point(521, 565);
+            this.boxLng.Location = new System.Drawing.Point(530, 562);
             this.boxLng.Name = "boxLng";
             this.boxLng.Size = new System.Drawing.Size(87, 20);
             this.boxLng.TabIndex = 3;
@@ -57,7 +56,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(317, 568);
+            this.label2.Location = new System.Drawing.Point(326, 565);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 13);
             this.label2.TabIndex = 4;
@@ -66,7 +65,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(461, 569);
+            this.label3.Location = new System.Drawing.Point(470, 565);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 13);
             this.label3.TabIndex = 5;
@@ -74,7 +73,7 @@
             // 
             // btnSetLocation
             // 
-            this.btnSetLocation.Location = new System.Drawing.Point(614, 563);
+            this.btnSetLocation.Location = new System.Drawing.Point(623, 560);
             this.btnSetLocation.Name = "btnSetLocation";
             this.btnSetLocation.Size = new System.Drawing.Size(87, 23);
             this.btnSetLocation.TabIndex = 6;
@@ -85,17 +84,17 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 570);
+            this.label1.Location = new System.Drawing.Point(12, 565);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 13);
+            this.label1.Size = new System.Drawing.Size(137, 13);
             this.label1.TabIndex = 7;
-            this.label1.Text = "Locations for Farming";
+            this.label1.Text = "Good Locations for Farming";
             // 
             // comboLocations
             // 
             this.comboLocations.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboLocations.FormattingEnabled = true;
-            this.comboLocations.Location = new System.Drawing.Point(134, 565);
+            this.comboLocations.Location = new System.Drawing.Point(155, 562);
             this.comboLocations.Name = "comboLocations";
             this.comboLocations.Size = new System.Drawing.Size(165, 21);
             this.comboLocations.TabIndex = 8;
@@ -125,7 +124,6 @@
             this.MainMap.Size = new System.Drawing.Size(698, 544);
             this.MainMap.TabIndex = 9;
             this.MainMap.Zoom = 0D;
-            this.MainMap.Load += new System.EventHandler(this.MainMap_Load_1);
             // 
             // LocationSelector
             // 
@@ -145,7 +143,7 @@
             this.MinimizeBox = false;
             this.Name = "LocationSelector";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Select Starting Location";
+            this.Text = "PoGoBoT - Select Location";
             this.Load += new System.EventHandler(this.LocationSelector_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

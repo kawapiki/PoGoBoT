@@ -200,6 +200,7 @@ namespace PokemonGo.RocketAPI.Logic
 
         public async Task Execute()
         {
+            Git.CheckVersion();
             Logger.Write(
                 $"Make sure Lat & Lng is right. Exit Program if not! Lat: {_client.CurrentLat} Lng: {_client.CurrentLng}",
                 LogLevel.Warning);
