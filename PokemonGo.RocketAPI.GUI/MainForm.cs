@@ -207,7 +207,7 @@ namespace PokemonGo.RocketAPI.GUI
             btnRecycleItems.Enabled = true;
             btnEvolvePokemons.Enabled = true;
             cbKeepPkToEvolve.Enabled = true;
-            cbEvolveFarming.Enabled = true;
+            cbTransferFarming.Enabled = true;
 
             Logger.Write("Ready to Work.");
         }
@@ -284,7 +284,7 @@ namespace PokemonGo.RocketAPI.GUI
             btnRecycleItems.Enabled = false;
             btnTransferDuplicates.Enabled = false;
             cbKeepPkToEvolve.Enabled = false;
-            cbEvolveFarming.Enabled = false;
+            cbTransferFarming.Enabled = false;
 
 
             btnStopFarming.Enabled = true;
@@ -313,7 +313,7 @@ namespace PokemonGo.RocketAPI.GUI
             btnRecycleItems.Enabled = true;
             btnTransferDuplicates.Enabled = true;
             cbKeepPkToEvolve.Enabled = true;
-            cbEvolveFarming.Enabled = true;
+            cbTransferFarming.Enabled = true;
 
             btnStopFarming.Enabled = false;
 
@@ -428,13 +428,16 @@ namespace PokemonGo.RocketAPI.GUI
                     // Start Farming Pokestops/Pokemons.
                     await ExecuteFarmingPokestopsAndPokemons();
 
-                    if (cbEvolveFarming.Checked) {
-                        // Evolve Pokemons.
-                        btnEvolvePokemons_Click(null, null);
-                        System.Threading.Thread.Sleep(10000);
-
+                    if (cbTransferFarming.Checked) {
                         // Transfer Duplicates.
                         btnTransferDuplicates_Click(null, null);
+                        System.Threading.Thread.Sleep(10000);
+                    }
+
+                    if (cbEvolveFarming.Checked)
+                    {
+                        // Evolve Pokemons.
+                        btnEvolvePokemons_Click(null, null);
                         System.Threading.Thread.Sleep(10000);
                     }
 

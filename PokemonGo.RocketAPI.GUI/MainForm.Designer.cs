@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnUseIncense = new System.Windows.Forms.Button();
-            this.cbEvolveFarming = new System.Windows.Forms.CheckBox();
+            this.cbTransferFarming = new System.Windows.Forms.CheckBox();
             this.btnLuckyEgg = new System.Windows.Forms.Button();
             this.cbKeepPkToEvolve = new System.Windows.Forms.CheckBox();
             this.btnRecycleItems = new System.Windows.Forms.Button();
@@ -67,6 +67,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.dGrid = new System.Windows.Forms.DataGridView();
+            this.cbEvolveFarming = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -77,8 +78,9 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnUseIncense);
             this.groupBox1.Controls.Add(this.cbEvolveFarming);
+            this.groupBox1.Controls.Add(this.btnUseIncense);
+            this.groupBox1.Controls.Add(this.cbTransferFarming);
             this.groupBox1.Controls.Add(this.btnLuckyEgg);
             this.groupBox1.Controls.Add(this.cbKeepPkToEvolve);
             this.groupBox1.Controls.Add(this.btnRecycleItems);
@@ -96,7 +98,7 @@
             // btnUseIncense
             // 
             this.btnUseIncense.Enabled = false;
-            this.btnUseIncense.Location = new System.Drawing.Point(6, 129);
+            this.btnUseIncense.Location = new System.Drawing.Point(6, 153);
             this.btnUseIncense.Name = "btnUseIncense";
             this.btnUseIncense.Size = new System.Drawing.Size(187, 23);
             this.btnUseIncense.TabIndex = 12;
@@ -104,23 +106,23 @@
             this.btnUseIncense.UseVisualStyleBackColor = true;
             this.btnUseIncense.Click += new System.EventHandler(this.btnUseIncense_Click_1);
             // 
-            // cbEvolveFarming
+            // cbTransferFarming
             // 
-            this.cbEvolveFarming.AutoSize = true;
-            this.cbEvolveFarming.Checked = true;
-            this.cbEvolveFarming.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbEvolveFarming.Enabled = false;
-            this.cbEvolveFarming.Location = new System.Drawing.Point(6, 48);
-            this.cbEvolveFarming.Name = "cbEvolveFarming";
-            this.cbEvolveFarming.Size = new System.Drawing.Size(162, 17);
-            this.cbEvolveFarming.TabIndex = 9;
-            this.cbEvolveFarming.Text = "Evolve / Transfer Pokemons";
-            this.cbEvolveFarming.UseVisualStyleBackColor = true;
+            this.cbTransferFarming.AutoSize = true;
+            this.cbTransferFarming.Checked = true;
+            this.cbTransferFarming.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbTransferFarming.Enabled = false;
+            this.cbTransferFarming.Location = new System.Drawing.Point(6, 48);
+            this.cbTransferFarming.Name = "cbTransferFarming";
+            this.cbTransferFarming.Size = new System.Drawing.Size(118, 17);
+            this.cbTransferFarming.TabIndex = 9;
+            this.cbTransferFarming.Text = "Transfer Pokemons";
+            this.cbTransferFarming.UseVisualStyleBackColor = true;
             // 
             // btnLuckyEgg
             // 
             this.btnLuckyEgg.Enabled = false;
-            this.btnLuckyEgg.Location = new System.Drawing.Point(6, 100);
+            this.btnLuckyEgg.Location = new System.Drawing.Point(6, 124);
             this.btnLuckyEgg.Name = "btnLuckyEgg";
             this.btnLuckyEgg.Size = new System.Drawing.Size(187, 23);
             this.btnLuckyEgg.TabIndex = 11;
@@ -177,7 +179,7 @@
             // btnStopFarming
             // 
             this.btnStopFarming.Enabled = false;
-            this.btnStopFarming.Location = new System.Drawing.Point(6, 71);
+            this.btnStopFarming.Location = new System.Drawing.Point(6, 95);
             this.btnStopFarming.Name = "btnStopFarming";
             this.btnStopFarming.Size = new System.Drawing.Size(187, 23);
             this.btnStopFarming.TabIndex = 1;
@@ -489,6 +491,19 @@
             this.dGrid.Size = new System.Drawing.Size(415, 265);
             this.dGrid.TabIndex = 10;
             // 
+            // cbEvolveFarming
+            // 
+            this.cbEvolveFarming.AutoSize = true;
+            this.cbEvolveFarming.Checked = true;
+            this.cbEvolveFarming.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbEvolveFarming.Enabled = false;
+            this.cbEvolveFarming.Location = new System.Drawing.Point(6, 67);
+            this.cbEvolveFarming.Name = "cbEvolveFarming";
+            this.cbEvolveFarming.Size = new System.Drawing.Size(112, 17);
+            this.cbEvolveFarming.TabIndex = 13;
+            this.cbEvolveFarming.Text = "Evolve Pokemons";
+            this.cbEvolveFarming.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -561,13 +576,14 @@
         private System.Windows.Forms.Label lbItemsInventory;
         private System.Windows.Forms.Label lbPokemonsInventory;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox cbEvolveFarming;
+        private System.Windows.Forms.CheckBox cbTransferFarming;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dGrid;
         private System.Windows.Forms.Button btnUseIncense;
         private System.Windows.Forms.Button btnLuckyEgg;
         private System.Windows.Forms.Label lbLuckyEggs;
         private System.Windows.Forms.Label lbIncense;
+        private System.Windows.Forms.CheckBox cbEvolveFarming;
     }
 }
 
