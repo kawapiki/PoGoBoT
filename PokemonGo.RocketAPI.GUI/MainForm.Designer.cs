@@ -111,7 +111,6 @@
             this.cbTransferFarming.AutoSize = true;
             this.cbTransferFarming.Checked = true;
             this.cbTransferFarming.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbTransferFarming.Enabled = false;
             this.cbTransferFarming.Location = new System.Drawing.Point(6, 48);
             this.cbTransferFarming.Name = "cbTransferFarming";
             this.cbTransferFarming.Size = new System.Drawing.Size(118, 17);
@@ -496,7 +495,6 @@
             this.cbEvolveFarming.AutoSize = true;
             this.cbEvolveFarming.Checked = true;
             this.cbEvolveFarming.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbEvolveFarming.Enabled = false;
             this.cbEvolveFarming.Location = new System.Drawing.Point(6, 67);
             this.cbEvolveFarming.Name = "cbEvolveFarming";
             this.cbEvolveFarming.Size = new System.Drawing.Size(112, 17);
