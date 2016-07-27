@@ -15,6 +15,7 @@ Chatting about this Repository can be done on our Discord: https://discord.gg/be
  - [GUI]
  - [PTC Login / Google]
  - [Get Map Objects and Inventory]
+ - [Use Lucky Egg or Incense]
  - [Search for gyms/pokestops/spawns]
  - [Farm pokestops]
  - [Farm all Pokemon in neighbourhood]
