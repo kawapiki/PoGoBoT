@@ -64,11 +64,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.dGrid = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -290,10 +292,10 @@
             // loggingBox
             // 
             this.loggingBox.Enabled = false;
-            this.loggingBox.Location = new System.Drawing.Point(217, 91);
+            this.loggingBox.Location = new System.Drawing.Point(217, 320);
             this.loggingBox.Multiline = true;
             this.loggingBox.Name = "loggingBox";
-            this.loggingBox.Size = new System.Drawing.Size(415, 507);
+            this.loggingBox.Size = new System.Drawing.Size(415, 278);
             this.loggingBox.TabIndex = 5;
             // 
             // groupBox2
@@ -448,12 +450,26 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // dGrid
+            // 
+            this.dGrid.AllowUserToAddRows = false;
+            this.dGrid.AllowUserToDeleteRows = false;
+            this.dGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGrid.Location = new System.Drawing.Point(217, 91);
+            this.dGrid.Name = "dGrid";
+            this.dGrid.ReadOnly = true;
+            this.dGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dGrid.Size = new System.Drawing.Size(415, 223);
+            this.dGrid.TabIndex = 10;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(644, 632);
+            this.Controls.Add(this.dGrid);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
@@ -481,6 +497,7 @@
             this.groupBox2.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -523,6 +540,7 @@
         private System.Windows.Forms.CheckBox cbEvolveFarming;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridView dGrid;
     }
 }
 

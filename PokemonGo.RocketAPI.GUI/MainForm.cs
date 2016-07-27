@@ -288,18 +288,46 @@ namespace PokemonGo.RocketAPI.GUI
 
         private async void btnEvolvePokemons_Click(object sender, EventArgs e)
         {
+            // Clear Grid
+            dGrid.Rows.Clear();
+
+            // Prepare Grid
+            dGrid.ColumnCount = 3;
+            dGrid.Columns[0].Name = "Action";
+            dGrid.Columns[1].Name = "Pokemon";
+            dGrid.Columns[2].Name = "Experience";
+
+
             // Evolve Pokemons
             await EvolveAllPokemonWithEnoughCandy();
         }
 
         private async void btnTransferDuplicates_Click(object sender, EventArgs e)
         {
+            // Clear Grid
+            dGrid.Rows.Clear();
+
+            // Prepare Grid
+            dGrid.ColumnCount = 3;
+            dGrid.Columns[0].Name = "Action";
+            dGrid.Columns[1].Name = "Pokemon";
+            dGrid.Columns[2].Name = "CP";
+
             // Transfer Pokemons
             await TransferDuplicatePokemon(cbKeepPkToEvolve.Checked);
         }
 
         private async void btnRecycleItems_Click(object sender, EventArgs e)
-        { 
+        {
+            // Clear Grid
+            dGrid.Rows.Clear();
+
+            // Prepare Grid
+            dGrid.ColumnCount = 3;
+            dGrid.Columns[0].Name = "Action";
+            dGrid.Columns[1].Name = "Count";
+            dGrid.Columns[2].Name = "Item";
+
             // Recycle Items
             await RecycleItems();
         }
@@ -536,6 +564,7 @@ namespace PokemonGo.RocketAPI.GUI
 
                     // GUI Experience
                     totalExperience += evolvePokemonOutProto.ExpAwarded;
+                    dGrid.Rows.Insert(0, "Evolved", pokemon.PokemonId.ToString(), evolvePokemonOutProto.ExpAwarded);
                 }                    
                 else
                 {
@@ -559,11 +588,24 @@ namespace PokemonGo.RocketAPI.GUI
 
             foreach (var duplicatePokemon in duplicatePokemons)
             {
-                var transfer = await client.TransferPokemon(duplicatePokemon.Id);
-                Logger.Write($"Transfer {duplicatePokemon.PokemonId} with {duplicatePokemon.Cp} CP", LogLevel.Info);
+                var IV = Logic.Logic.CalculatePokemonPerfection(duplicatePokemon);
+                if (IV < settings.KeepMinIVPercentage)
+                {
+                    var transfer = await client.TransferPokemon(duplicatePokemon.Id);
+                    Logger.Write($"Transfer {duplicatePokemon.PokemonId} with {duplicatePokemon.Cp} CP and an IV of { IV }", LogLevel.Info);
 
-                await GetCurrentPlayerInformation();
-                await Task.Delay(500);
+                    // Add Row to DataGrid
+                    dGrid.Rows.Insert(0, "Transferred", duplicatePokemon.PokemonId.ToString(), duplicatePokemon.Cp);
+
+                    await GetCurrentPlayerInformation();
+                    await Task.Delay(500);
+                }
+                else
+                {
+                    Logger.Write($"Will not transfer {duplicatePokemon.PokemonId} with {duplicatePokemon.Cp} CP and an IV of { IV }", LogLevel.Info);
+                    // Add Row to DataGrid
+                    dGrid.Rows.Insert(0, "Not transferred", duplicatePokemon.PokemonId.ToString(), duplicatePokemon.Cp);
+                }
             }
 
             // Logging
@@ -571,7 +613,7 @@ namespace PokemonGo.RocketAPI.GUI
         }
 
         private async Task RecycleItems()
-        {   
+        {
             try
             {
                 // Logging
@@ -584,9 +626,13 @@ namespace PokemonGo.RocketAPI.GUI
                     var transfer = await client.RecycleItem((ItemId)item.Item_, item.Count);
                     Logger.Write($"Recycled {item.Count}x {(ItemId)item.Item_}", LogLevel.Info);
 
+                    // GUI Experience
+                    dGrid.Rows.Insert(0, "Recycled", item.Count, ((ItemId)item.Item_).ToString());
+
                     await Task.Delay(500);
                 }
 
+                await GetCurrentPlayerInformation();
 
                 // Logging
                 Logger.Write("Recycling Complete.");
@@ -595,7 +641,7 @@ namespace PokemonGo.RocketAPI.GUI
             {
                 Logger.Write($"Error Details: {ex.Message}");
                 Logger.Write("Unable to Complete Items Recycling.");
-            }            
+            }
         }
 
         private async Task<MiscEnums.Item> GetBestBall(int? pokemonCp)
@@ -715,6 +761,7 @@ namespace PokemonGo.RocketAPI.GUI
                 var update = await client.UpdatePlayerLocation(pokemon.Latitude, pokemon.Longitude, settings.DefaultAltitude);
                 var encounterPokemonResponse = await client.EncounterPokemon(pokemon.EncounterId, pokemon.SpawnpointId);
                 var pokemonCP = encounterPokemonResponse?.WildPokemon?.PokemonData?.Cp;
+                var pokemonIV = Logic.Logic.CalculatePokemonPerfection(encounterPokemonResponse?.WildPokemon?.PokemonData).ToString("0.00") + "%";
                 var pokeball = await GetBestBall(pokemonCP);
 
                 Logger.Write($"Fighting {pokemon.PokemonId} with Capture Probability of {(encounterPokemonResponse?.CaptureProbability.CaptureProbability_.First())*100:0.0}%");
@@ -747,6 +794,14 @@ namespace PokemonGo.RocketAPI.GUI
                     totalExperience += fightExperience;
                     Logger.Write("Gained " + fightExperience + " XP.");
                     pokemonCaughtCount++;
+
+                    // Add Row to the DataGrid
+                    dGrid.Rows.Insert(0, "Captured", pokemon.PokemonId.ToString(), encounterPokemonResponse?.WildPokemon?.PokemonData?.Cp, pokemonIV);
+                }
+                else
+                {
+                    // Add Row to the DataGrid
+                    dGrid.Rows.Insert(0, "Ran Away", pokemon.PokemonId.ToString(), encounterPokemonResponse?.WildPokemon?.PokemonData?.Cp, pokemonIV);
                 }
 
                 boxPokemonName.Clear();
