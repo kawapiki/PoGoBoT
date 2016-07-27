@@ -30,14 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbEvolveFarming = new System.Windows.Forms.CheckBox();
             this.btnUseIncense = new System.Windows.Forms.Button();
+            this.cbTransferFarming = new System.Windows.Forms.CheckBox();
             this.btnLuckyEgg = new System.Windows.Forms.Button();
+            this.btnStopFarming = new System.Windows.Forms.Button();
+            this.btnStartFarming = new System.Windows.Forms.Button();
             this.cbKeepPkToEvolve = new System.Windows.Forms.CheckBox();
             this.btnRecycleItems = new System.Windows.Forms.Button();
             this.btnTransferDuplicates = new System.Windows.Forms.Button();
             this.btnEvolvePokemons = new System.Windows.Forms.Button();
-            this.btnStopFarming = new System.Windows.Forms.Button();
-            this.btnStartFarming = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lbPkmnCaptured = new System.Windows.Forms.Label();
             this.lbPkmnHr = new System.Windows.Forms.Label();
@@ -69,8 +71,7 @@
             this.lbcopyright = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.btnadvoptions = new System.Windows.Forms.Button();
-            this.cbEvolveFarming = new System.Windows.Forms.CheckBox();
-            this.cbTransferFarming = new System.Windows.Forms.CheckBox();
+            this.cbMode = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -82,6 +83,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbMode);
             this.groupBox1.Controls.Add(this.cbEvolveFarming);
             this.groupBox1.Controls.Add(this.btnUseIncense);
             this.groupBox1.Controls.Add(this.cbTransferFarming);
@@ -90,15 +92,26 @@
             this.groupBox1.Controls.Add(this.btnStartFarming);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(201, 176);
+            this.groupBox1.Size = new System.Drawing.Size(201, 209);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Farming Control";
             // 
+            // cbEvolveFarming
+            // 
+            this.cbEvolveFarming.AutoSize = true;
+            this.cbEvolveFarming.Enabled = false;
+            this.cbEvolveFarming.Location = new System.Drawing.Point(7, 94);
+            this.cbEvolveFarming.Name = "cbEvolveFarming";
+            this.cbEvolveFarming.Size = new System.Drawing.Size(112, 17);
+            this.cbEvolveFarming.TabIndex = 15;
+            this.cbEvolveFarming.Text = "Evolve Pokemons";
+            this.cbEvolveFarming.UseVisualStyleBackColor = true;
+            // 
             // btnUseIncense
             // 
             this.btnUseIncense.Enabled = false;
-            this.btnUseIncense.Location = new System.Drawing.Point(6, 147);
+            this.btnUseIncense.Location = new System.Drawing.Point(6, 176);
             this.btnUseIncense.Name = "btnUseIncense";
             this.btnUseIncense.Size = new System.Drawing.Size(189, 23);
             this.btnUseIncense.TabIndex = 8;
@@ -106,10 +119,21 @@
             this.btnUseIncense.UseVisualStyleBackColor = true;
             this.btnUseIncense.Click += new System.EventHandler(this.btnUseIncense_Click);
             // 
+            // cbTransferFarming
+            // 
+            this.cbTransferFarming.AutoSize = true;
+            this.cbTransferFarming.Enabled = false;
+            this.cbTransferFarming.Location = new System.Drawing.Point(7, 76);
+            this.cbTransferFarming.Name = "cbTransferFarming";
+            this.cbTransferFarming.Size = new System.Drawing.Size(118, 17);
+            this.cbTransferFarming.TabIndex = 14;
+            this.cbTransferFarming.Text = "Transfer Pokemons";
+            this.cbTransferFarming.UseVisualStyleBackColor = true;
+            // 
             // btnLuckyEgg
             // 
             this.btnLuckyEgg.Enabled = false;
-            this.btnLuckyEgg.Location = new System.Drawing.Point(6, 120);
+            this.btnLuckyEgg.Location = new System.Drawing.Point(6, 149);
             this.btnLuckyEgg.Name = "btnLuckyEgg";
             this.btnLuckyEgg.Size = new System.Drawing.Size(189, 23);
             this.btnLuckyEgg.TabIndex = 7;
@@ -117,56 +141,10 @@
             this.btnLuckyEgg.UseVisualStyleBackColor = true;
             this.btnLuckyEgg.Click += new System.EventHandler(this.btnLuckyEgg_Click);
             // 
-            // cbKeepPkToEvolve
-            // 
-            this.cbKeepPkToEvolve.AutoSize = true;
-            this.cbKeepPkToEvolve.Checked = true;
-            this.cbKeepPkToEvolve.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbKeepPkToEvolve.Enabled = false;
-            this.cbKeepPkToEvolve.Location = new System.Drawing.Point(7, 123);
-            this.cbKeepPkToEvolve.Name = "cbKeepPkToEvolve";
-            this.cbKeepPkToEvolve.Size = new System.Drawing.Size(181, 17);
-            this.cbKeepPkToEvolve.TabIndex = 5;
-            this.cbKeepPkToEvolve.Text = "Keep Pokemons that can evolve";
-            this.cbKeepPkToEvolve.UseVisualStyleBackColor = true;
-            // 
-            // btnRecycleItems
-            // 
-            this.btnRecycleItems.Enabled = false;
-            this.btnRecycleItems.Location = new System.Drawing.Point(6, 146);
-            this.btnRecycleItems.Name = "btnRecycleItems";
-            this.btnRecycleItems.Size = new System.Drawing.Size(189, 46);
-            this.btnRecycleItems.TabIndex = 4;
-            this.btnRecycleItems.Text = "Recycle Items";
-            this.btnRecycleItems.UseVisualStyleBackColor = true;
-            this.btnRecycleItems.Click += new System.EventHandler(this.btnRecycleItems_Click);
-            // 
-            // btnTransferDuplicates
-            // 
-            this.btnTransferDuplicates.Enabled = false;
-            this.btnTransferDuplicates.Location = new System.Drawing.Point(6, 71);
-            this.btnTransferDuplicates.Name = "btnTransferDuplicates";
-            this.btnTransferDuplicates.Size = new System.Drawing.Size(189, 46);
-            this.btnTransferDuplicates.TabIndex = 3;
-            this.btnTransferDuplicates.Text = "Transfer Duplicate Pokemons";
-            this.btnTransferDuplicates.UseVisualStyleBackColor = true;
-            this.btnTransferDuplicates.Click += new System.EventHandler(this.btnTransferDuplicates_Click);
-            // 
-            // btnEvolvePokemons
-            // 
-            this.btnEvolvePokemons.Enabled = false;
-            this.btnEvolvePokemons.Location = new System.Drawing.Point(6, 19);
-            this.btnEvolvePokemons.Name = "btnEvolvePokemons";
-            this.btnEvolvePokemons.Size = new System.Drawing.Size(189, 46);
-            this.btnEvolvePokemons.TabIndex = 2;
-            this.btnEvolvePokemons.Text = "Evolve Pokemons w/Candy";
-            this.btnEvolvePokemons.UseVisualStyleBackColor = true;
-            this.btnEvolvePokemons.Click += new System.EventHandler(this.btnEvolvePokemons_Click);
-            // 
             // btnStopFarming
             // 
             this.btnStopFarming.Enabled = false;
-            this.btnStopFarming.Location = new System.Drawing.Point(6, 91);
+            this.btnStopFarming.Location = new System.Drawing.Point(6, 120);
             this.btnStopFarming.Name = "btnStopFarming";
             this.btnStopFarming.Size = new System.Drawing.Size(189, 23);
             this.btnStopFarming.TabIndex = 1;
@@ -177,13 +155,59 @@
             // btnStartFarming
             // 
             this.btnStartFarming.Enabled = false;
-            this.btnStartFarming.Location = new System.Drawing.Point(6, 22);
+            this.btnStartFarming.Location = new System.Drawing.Point(6, 48);
             this.btnStartFarming.Name = "btnStartFarming";
             this.btnStartFarming.Size = new System.Drawing.Size(189, 23);
             this.btnStartFarming.TabIndex = 0;
             this.btnStartFarming.Text = "Start Farming";
             this.btnStartFarming.UseVisualStyleBackColor = true;
             this.btnStartFarming.Click += new System.EventHandler(this.btnStartFarming_Click);
+            // 
+            // cbKeepPkToEvolve
+            // 
+            this.cbKeepPkToEvolve.AutoSize = true;
+            this.cbKeepPkToEvolve.Checked = true;
+            this.cbKeepPkToEvolve.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbKeepPkToEvolve.Enabled = false;
+            this.cbKeepPkToEvolve.Location = new System.Drawing.Point(6, 77);
+            this.cbKeepPkToEvolve.Name = "cbKeepPkToEvolve";
+            this.cbKeepPkToEvolve.Size = new System.Drawing.Size(181, 17);
+            this.cbKeepPkToEvolve.TabIndex = 5;
+            this.cbKeepPkToEvolve.Text = "Keep Pokemons that can evolve";
+            this.cbKeepPkToEvolve.UseVisualStyleBackColor = true;
+            // 
+            // btnRecycleItems
+            // 
+            this.btnRecycleItems.Enabled = false;
+            this.btnRecycleItems.Location = new System.Drawing.Point(6, 100);
+            this.btnRecycleItems.Name = "btnRecycleItems";
+            this.btnRecycleItems.Size = new System.Drawing.Size(189, 23);
+            this.btnRecycleItems.TabIndex = 4;
+            this.btnRecycleItems.Text = "Recycle Items";
+            this.btnRecycleItems.UseVisualStyleBackColor = true;
+            this.btnRecycleItems.Click += new System.EventHandler(this.btnRecycleItems_Click);
+            // 
+            // btnTransferDuplicates
+            // 
+            this.btnTransferDuplicates.Enabled = false;
+            this.btnTransferDuplicates.Location = new System.Drawing.Point(6, 48);
+            this.btnTransferDuplicates.Name = "btnTransferDuplicates";
+            this.btnTransferDuplicates.Size = new System.Drawing.Size(189, 23);
+            this.btnTransferDuplicates.TabIndex = 3;
+            this.btnTransferDuplicates.Text = "Transfer Duplicate Pokemons";
+            this.btnTransferDuplicates.UseVisualStyleBackColor = true;
+            this.btnTransferDuplicates.Click += new System.EventHandler(this.btnTransferDuplicates_Click);
+            // 
+            // btnEvolvePokemons
+            // 
+            this.btnEvolvePokemons.Enabled = false;
+            this.btnEvolvePokemons.Location = new System.Drawing.Point(6, 19);
+            this.btnEvolvePokemons.Name = "btnEvolvePokemons";
+            this.btnEvolvePokemons.Size = new System.Drawing.Size(189, 23);
+            this.btnEvolvePokemons.TabIndex = 2;
+            this.btnEvolvePokemons.Text = "Evolve Pokemons w/Candy";
+            this.btnEvolvePokemons.UseVisualStyleBackColor = true;
+            this.btnEvolvePokemons.Click += new System.EventHandler(this.btnEvolvePokemons_Click);
             // 
             // groupBox3
             // 
@@ -498,9 +522,9 @@
             this.groupBox6.Controls.Add(this.btnEvolvePokemons);
             this.groupBox6.Controls.Add(this.cbKeepPkToEvolve);
             this.groupBox6.Controls.Add(this.btnTransferDuplicates);
-            this.groupBox6.Location = new System.Drawing.Point(12, 194);
+            this.groupBox6.Location = new System.Drawing.Point(12, 261);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(201, 206);
+            this.groupBox6.Size = new System.Drawing.Size(201, 139);
             this.groupBox6.TabIndex = 9;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Trainer Control";
@@ -515,27 +539,14 @@
             this.btnadvoptions.Text = "Advanced Options";
             this.btnadvoptions.UseVisualStyleBackColor = true;
             // 
-            // cbEvolveFarming
+            // cbMode
             // 
-            this.cbEvolveFarming.AutoSize = true;
-            this.cbEvolveFarming.Enabled = false;
-            this.cbEvolveFarming.Location = new System.Drawing.Point(7, 68);
-            this.cbEvolveFarming.Name = "cbEvolveFarming";
-            this.cbEvolveFarming.Size = new System.Drawing.Size(112, 17);
-            this.cbEvolveFarming.TabIndex = 15;
-            this.cbEvolveFarming.Text = "Evolve Pokemons";
-            this.cbEvolveFarming.UseVisualStyleBackColor = true;
-            // 
-            // cbTransferFarming
-            // 
-            this.cbTransferFarming.AutoSize = true;
-            this.cbTransferFarming.Enabled = false;
-            this.cbTransferFarming.Location = new System.Drawing.Point(7, 49);
-            this.cbTransferFarming.Name = "cbTransferFarming";
-            this.cbTransferFarming.Size = new System.Drawing.Size(118, 17);
-            this.cbTransferFarming.TabIndex = 14;
-            this.cbTransferFarming.Text = "Transfer Pokemons";
-            this.cbTransferFarming.UseVisualStyleBackColor = true;
+            this.cbMode.FormattingEnabled = true;
+            this.cbMode.Location = new System.Drawing.Point(6, 22);
+            this.cbMode.Name = "cbMode";
+            this.cbMode.Size = new System.Drawing.Size(188, 21);
+            this.cbMode.TabIndex = 16;
+            this.cbMode.Text = "Select farming mode";
             // 
             // MainForm
             // 
@@ -623,6 +634,7 @@
         private System.Windows.Forms.Button btnadvoptions;
         private System.Windows.Forms.CheckBox cbEvolveFarming;
         private System.Windows.Forms.CheckBox cbTransferFarming;
+        private System.Windows.Forms.ComboBox cbMode;
     }
 }
 

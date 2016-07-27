@@ -44,6 +44,11 @@ namespace PokemonGo.RocketAPI.GUI
             lbLuckyEggs.Text = string.Empty;
             lbIncense.Text = string.Empty;
 
+
+            // COMBOBOX - MODE
+            cbMode.Items.Add("Pokemon & Pokestop");
+            cbMode.Items.Add("Pokestop");
+
             // Clear Experience
             _totalExperience = 0;
             _pokemonCaughtCount = 0;            
@@ -274,35 +279,42 @@ namespace PokemonGo.RocketAPI.GUI
 
         private async void btnStartFarming_Click(object sender, EventArgs e)
         {
-            if (!await PreflightCheck())
-                return;
+            if (cbMode.Text == "Select farming mode")
+            {
+                MessageBox.Show("Please select a farming mode");
+            }
+            else
+            {
+                if (!await PreflightCheck())
+                    return;
 
-            // Disable Button
-            btnStartFarming.Enabled = false;
-            btnEvolvePokemons.Enabled = false;
-            btnRecycleItems.Enabled = false;
-            btnTransferDuplicates.Enabled = false;
-            cbKeepPkToEvolve.Enabled = false;
-            cbTransferFarming.Enabled = false;
-            cbEvolveFarming.Enabled = false;
+                // Disable Button
+                btnStartFarming.Enabled = false;
+                btnEvolvePokemons.Enabled = false;
+                btnRecycleItems.Enabled = false;
+                btnTransferDuplicates.Enabled = false;
+                cbKeepPkToEvolve.Enabled = false;
+                cbTransferFarming.Enabled = false;
+                cbEvolveFarming.Enabled = false;
 
 
-            btnStopFarming.Enabled = true;
+                btnStopFarming.Enabled = true;
 
-            // Setup the Timer
-            _isFarmingActive = true;
-            SetUpTimer();
-            StartBottingSession();
+                // Setup the Timer
+                _isFarmingActive = true;
+                SetUpTimer();
+                StartBottingSession();
 
-            // Clear Grid
-            dGrid.Rows.Clear();
+                // Clear Grid
+                dGrid.Rows.Clear();
 
-            // Prepare Grid
-            dGrid.ColumnCount = 4;
-            dGrid.Columns[0].Name = "Action";
-            dGrid.Columns[1].Name = "Pokemon";
-            dGrid.Columns[2].Name = "CP";
-            dGrid.Columns[3].Name = "IV";
+                // Prepare Grid
+                dGrid.ColumnCount = 4;
+                dGrid.Columns[0].Name = "Action";
+                dGrid.Columns[1].Name = "Pokemon";
+                dGrid.Columns[2].Name = "CP";
+                dGrid.Columns[3].Name = "IV";
+            }
         }
 
         private void btnStopFarming_Click(object sender, EventArgs e)
@@ -799,15 +811,22 @@ namespace PokemonGo.RocketAPI.GUI
                 count++;                               
 
                 var fortSearch = await _client.SearchFort(pokeStop.Id, pokeStop.Latitude, pokeStop.Longitude);
-                Logger.Write($"Loot -> Gems: { fortSearch.GemsAwarded}, Eggs: {fortSearch.PokemonDataEgg} Items: {StringUtils.GetSummedFriendlyNameOfItemAwardList(fortSearch.ItemsAwarded)}");
-                Logger.Write("Gained " + fortSearch.ExperienceAwarded + " XP.");
-
-                // Experience Counter
+                if (fortSearch.ExperienceAwarded != 0)
+                {
+                    Logger.Write($"Loot -> Gems: { fortSearch.GemsAwarded}, Eggs: {fortSearch.PokemonDataEgg} Items: {StringUtils.GetSummedFriendlyNameOfItemAwardList(fortSearch.ItemsAwarded)}");
+                    Logger.Write("Gained " + fortSearch.ExperienceAwarded + " XP.");
+                }
                 _totalExperience += fortSearch.ExperienceAwarded;
 
                 await GetCurrentPlayerInformation();
-                Logger.Write("Attempting to Capture Nearby Pokemons.");
-                await ExecuteCatchAllNearbyPokemons();
+
+
+                if (cbMode.Text == "Pokemon & Pokestop") {
+                    Logger.Write("Attempting to Capture Nearby Pokemons.");
+                    await ExecuteCatchAllNearbyPokemons();
+                }
+
+
 
                 if (!_isFarmingActive)
                 {
@@ -815,7 +834,7 @@ namespace PokemonGo.RocketAPI.GUI
                     return;
                 }                    
 
-                Logger.Write("Waiting 10 seconds before moving to the next Pokestop.");
+                Logger.Write("Moving to the next Pokestop.");
                 await Task.Delay(10000);
             }
         }
@@ -887,7 +906,7 @@ namespace PokemonGo.RocketAPI.GUI
                     return;
                 }
 
-                Logger.Write("Waiting 10 seconds before moving to the next Pokemon.");
+                Logger.Write("Moving to the next Pokemon.");
                 await Task.Delay(10000);
             }
         }
