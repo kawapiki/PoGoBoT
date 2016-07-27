@@ -266,6 +266,16 @@ namespace PokemonGo.RocketAPI.GUI
             isFarmingActive = true;
             setUpTimer();
             startBottingSession();
+
+            // Clear Grid
+            dGrid.Rows.Clear();
+
+            // Prepare Grid
+            dGrid.ColumnCount = 4;
+            dGrid.Columns[0].Name = "Action";
+            dGrid.Columns[1].Name = "Pokemon";
+            dGrid.Columns[2].Name = "CP";
+            dGrid.Columns[3].Name = "IV";
         }
 
         private void btnStopFarming_Click(object sender, EventArgs e)
