@@ -35,3 +35,5 @@ You need .NET Framework 4.5 to run this (https://www.microsoft.com/en-ca/downloa
 
 <h2><a name="donation">Donation</a></h2>
 <a href="https://www.phaopay.com/donate/">Donate via Stripe (CreditCard)</a>
+<br>
+BTC : 1L1tQW2MH3xfc3AzV6DbnVBCexDfR1GEM1
