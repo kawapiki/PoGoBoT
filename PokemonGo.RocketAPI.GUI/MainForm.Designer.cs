@@ -30,7 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnUseIncense = new System.Windows.Forms.Button();
             this.cbEvolveFarming = new System.Windows.Forms.CheckBox();
+            this.btnLuckyEgg = new System.Windows.Forms.Button();
             this.cbKeepPkToEvolve = new System.Windows.Forms.CheckBox();
             this.btnRecycleItems = new System.Windows.Forms.Button();
             this.btnTransferDuplicates = new System.Windows.Forms.Button();
@@ -42,6 +44,8 @@
             this.lbPkmnHr = new System.Windows.Forms.Label();
             this.lbExpHour = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.lbIncense = new System.Windows.Forms.Label();
+            this.lbLuckyEggs = new System.Windows.Forms.Label();
             this.lbItemsInventory = new System.Windows.Forms.Label();
             this.lbPokemonsInventory = new System.Windows.Forms.Label();
             this.lbExperience = new System.Windows.Forms.Label();
@@ -73,7 +77,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnUseIncense);
             this.groupBox1.Controls.Add(this.cbEvolveFarming);
+            this.groupBox1.Controls.Add(this.btnLuckyEgg);
             this.groupBox1.Controls.Add(this.cbKeepPkToEvolve);
             this.groupBox1.Controls.Add(this.btnRecycleItems);
             this.groupBox1.Controls.Add(this.btnTransferDuplicates);
@@ -87,6 +93,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Control";
             // 
+            // btnUseIncense
+            // 
+            this.btnUseIncense.Enabled = false;
+            this.btnUseIncense.Location = new System.Drawing.Point(6, 129);
+            this.btnUseIncense.Name = "btnUseIncense";
+            this.btnUseIncense.Size = new System.Drawing.Size(187, 23);
+            this.btnUseIncense.TabIndex = 12;
+            this.btnUseIncense.Text = "Use Incense";
+            this.btnUseIncense.UseVisualStyleBackColor = true;
+            this.btnUseIncense.Click += new System.EventHandler(this.btnUseIncense_Click_1);
+            // 
             // cbEvolveFarming
             // 
             this.cbEvolveFarming.AutoSize = true;
@@ -99,6 +116,17 @@
             this.cbEvolveFarming.TabIndex = 9;
             this.cbEvolveFarming.Text = "Evolve / Transfer Pokemons";
             this.cbEvolveFarming.UseVisualStyleBackColor = true;
+            // 
+            // btnLuckyEgg
+            // 
+            this.btnLuckyEgg.Enabled = false;
+            this.btnLuckyEgg.Location = new System.Drawing.Point(6, 100);
+            this.btnLuckyEgg.Name = "btnLuckyEgg";
+            this.btnLuckyEgg.Size = new System.Drawing.Size(187, 23);
+            this.btnLuckyEgg.TabIndex = 11;
+            this.btnLuckyEgg.Text = "Use Lucky egg";
+            this.btnLuckyEgg.UseVisualStyleBackColor = true;
+            this.btnLuckyEgg.Click += new System.EventHandler(this.btnLuckyEgg_Click_1);
             // 
             // cbKeepPkToEvolve
             // 
@@ -212,6 +240,8 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.lbIncense);
+            this.groupBox4.Controls.Add(this.lbLuckyEggs);
             this.groupBox4.Controls.Add(this.lbItemsInventory);
             this.groupBox4.Controls.Add(this.lbPokemonsInventory);
             this.groupBox4.Controls.Add(this.lbExperience);
@@ -219,10 +249,30 @@
             this.groupBox4.Controls.Add(this.lbName);
             this.groupBox4.Location = new System.Drawing.Point(12, 495);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(199, 103);
+            this.groupBox4.Size = new System.Drawing.Size(199, 134);
             this.groupBox4.TabIndex = 4;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Information";
+            // 
+            // lbIncense
+            // 
+            this.lbIncense.AutoSize = true;
+            this.lbIncense.Location = new System.Drawing.Point(6, 116);
+            this.lbIncense.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.lbIncense.Name = "lbIncense";
+            this.lbIncense.Size = new System.Drawing.Size(53, 13);
+            this.lbIncense.TabIndex = 6;
+            this.lbIncense.Text = "lbIncense";
+            // 
+            // lbLuckyEggs
+            // 
+            this.lbLuckyEggs.AutoSize = true;
+            this.lbLuckyEggs.Location = new System.Drawing.Point(6, 99);
+            this.lbLuckyEggs.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.lbLuckyEggs.Name = "lbLuckyEggs";
+            this.lbLuckyEggs.Size = new System.Drawing.Size(68, 13);
+            this.lbLuckyEggs.TabIndex = 5;
+            this.lbLuckyEggs.Text = "lbLuckyEggs";
             // 
             // lbItemsInventory
             // 
@@ -276,7 +326,7 @@
             // 
             // loggingBox
             // 
-            this.loggingBox.Location = new System.Drawing.Point(217, 320);
+            this.loggingBox.Location = new System.Drawing.Point(217, 362);
             this.loggingBox.Multiline = true;
             this.loggingBox.Name = "loggingBox";
             this.loggingBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
@@ -409,7 +459,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(447, 610);
+            this.label1.Location = new System.Drawing.Point(447, 648);
             this.label1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(185, 13);
@@ -418,7 +468,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(12, 600);
+            this.button2.Location = new System.Drawing.Point(12, 635);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(199, 23);
             this.button2.TabIndex = 9;
@@ -436,7 +486,7 @@
             this.dGrid.Name = "dGrid";
             this.dGrid.ReadOnly = true;
             this.dGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dGrid.Size = new System.Drawing.Size(415, 223);
+            this.dGrid.Size = new System.Drawing.Size(415, 265);
             this.dGrid.TabIndex = 10;
             // 
             // MainForm
@@ -444,7 +494,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(644, 632);
+            this.ClientSize = new System.Drawing.Size(644, 670);
             this.Controls.Add(this.dGrid);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
@@ -456,8 +506,8 @@
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(660, 671);
-            this.MinimumSize = new System.Drawing.Size(660, 671);
+            this.MaximumSize = new System.Drawing.Size(660, 709);
+            this.MinimumSize = new System.Drawing.Size(660, 709);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PoGoBoT - GUI";
@@ -514,6 +564,10 @@
         private System.Windows.Forms.CheckBox cbEvolveFarming;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dGrid;
+        private System.Windows.Forms.Button btnUseIncense;
+        private System.Windows.Forms.Button btnLuckyEgg;
+        private System.Windows.Forms.Label lbLuckyEggs;
+        private System.Windows.Forms.Label lbIncense;
     }
 }
 
