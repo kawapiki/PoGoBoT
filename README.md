@@ -32,3 +32,6 @@ This release is based on Necro and Feroxs source.
 
 <h2><a name="faq">FAQ</a></h2>
 You need .NET Framework 4.5 to run this (https://www.microsoft.com/en-ca/download/details.aspx?id=30653)
+
+<h2><a name="donation">Donation</a></h2>
+<a href="https://www.phaopay.com/donate/">Donate via Stripe (CreditCard)</a>
