@@ -61,7 +61,6 @@
             this.boxPokemonCaughtProb = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dGrid = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
@@ -277,10 +276,10 @@
             // 
             // loggingBox
             // 
-            this.loggingBox.Enabled = false;
             this.loggingBox.Location = new System.Drawing.Point(217, 320);
             this.loggingBox.Multiline = true;
             this.loggingBox.Name = "loggingBox";
+            this.loggingBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.loggingBox.Size = new System.Drawing.Size(415, 278);
             this.loggingBox.TabIndex = 5;
             // 
@@ -417,15 +416,6 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "https://github.com/WooAf/PoGoBoT";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(12, 600);
@@ -457,7 +447,6 @@
             this.ClientSize = new System.Drawing.Size(644, 632);
             this.Controls.Add(this.dGrid);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox2);
@@ -523,7 +512,6 @@
         private System.Windows.Forms.Label lbPokemonsInventory;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox cbEvolveFarming;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dGrid;
     }
