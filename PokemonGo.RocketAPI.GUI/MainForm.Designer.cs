@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbEvolveFarming = new System.Windows.Forms.CheckBox();
-            this.btnLuckyEgg = new System.Windows.Forms.Button();
             this.cbKeepPkToEvolve = new System.Windows.Forms.CheckBox();
             this.btnRecycleItems = new System.Windows.Forms.Button();
             this.btnTransferDuplicates = new System.Windows.Forms.Button();
@@ -76,7 +75,6 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.cbEvolveFarming);
-            this.groupBox1.Controls.Add(this.btnLuckyEgg);
             this.groupBox1.Controls.Add(this.cbKeepPkToEvolve);
             this.groupBox1.Controls.Add(this.btnRecycleItems);
             this.groupBox1.Controls.Add(this.btnTransferDuplicates);
@@ -102,18 +100,6 @@
             this.cbEvolveFarming.TabIndex = 9;
             this.cbEvolveFarming.Text = "Evolve / Transfer Pokemons";
             this.cbEvolveFarming.UseVisualStyleBackColor = true;
-            // 
-            // btnLuckyEgg
-            // 
-            this.btnLuckyEgg.Enabled = false;
-            this.btnLuckyEgg.Location = new System.Drawing.Point(6, 164);
-            this.btnLuckyEgg.Name = "btnLuckyEgg";
-            this.btnLuckyEgg.Size = new System.Drawing.Size(187, 23);
-            this.btnLuckyEgg.TabIndex = 8;
-            this.btnLuckyEgg.Text = "Use Lucky egg";
-            this.btnLuckyEgg.UseVisualStyleBackColor = true;
-            this.btnLuckyEgg.Visible = false;
-            this.btnLuckyEgg.Click += new System.EventHandler(this.btnLuckyEgg_Click);
             // 
             // cbKeepPkToEvolve
             // 
@@ -536,7 +522,6 @@
         private System.Windows.Forms.Label lbItemsInventory;
         private System.Windows.Forms.Label lbPokemonsInventory;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnLuckyEgg;
         private System.Windows.Forms.CheckBox cbEvolveFarming;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
