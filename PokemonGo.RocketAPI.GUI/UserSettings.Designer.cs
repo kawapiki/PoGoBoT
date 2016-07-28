@@ -190,5 +190,41 @@ namespace PokemonGo.RocketAPI.GUI {
                 this["DefaultLongitude"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("10")]
+        public int pokestopDelay {
+            get {
+                return ((int)(this["pokestopDelay"]));
+            }
+            set {
+                this["pokestopDelay"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("5")]
+        public int pokemonDelay {
+            get {
+                return ((int)(this["pokemonDelay"]));
+            }
+            set {
+                this["pokemonDelay"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("40")]
+        public float minBerry {
+            get {
+                return ((float)(this["minBerry"]));
+            }
+            set {
+                this["minBerry"] = value;
+            }
+        }
     }
 }

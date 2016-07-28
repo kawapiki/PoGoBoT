@@ -55,6 +55,7 @@ namespace PokemonGo.RocketAPI.GUI
             _totalExperience = 0;
             _pokemonCaughtCount = 0;
         }
+
         private void SetupLocationMap()
         {
             MainMap.DragButton = MouseButtons.Left;
@@ -238,6 +239,7 @@ namespace PokemonGo.RocketAPI.GUI
             btnExtraPlayerInformation.Enabled = true;
             cbTransfer.Enabled = true;
             cbEvolve.Enabled = true;
+            btnadvoptions.Enabled = true;
 
             Logger.Write("Ready to Work.");
         }
@@ -341,6 +343,7 @@ namespace PokemonGo.RocketAPI.GUI
             cbKeepPkToEvolve.Enabled = false;
             cbTransfer.Enabled = false;
             cbEvolve.Enabled = false;
+            btnadvoptions.Enabled = false;
 
 
             btnStopFarming.Enabled = true;
@@ -358,6 +361,7 @@ namespace PokemonGo.RocketAPI.GUI
             cbKeepPkToEvolve.Enabled = true;
             cbTransfer.Enabled = true;
             cbEvolve.Enabled = true;
+            btnadvoptions.Enabled = true;
 
             btnStopFarming.Enabled = false;
 
@@ -698,7 +702,7 @@ namespace PokemonGo.RocketAPI.GUI
             foreach (var duplicatePokemon in duplicatePokemons)
             {
                 var iv = Logic.Logic.CalculatePokemonPerfection(duplicatePokemon);
-                if (iv < _settings.KeepMinIVPercentage && duplicatePokemon.Cp < _settings.KeepMinCP)
+                if (iv < UserSettings.Default.KeepMinIVPercentage && duplicatePokemon.Cp < UserSettings.Default.KeepMinCP)
                 {
                     var transfer = await _client.TransferPokemon(duplicatePokemon.Id);
                     Logger.Write($"Transfer {duplicatePokemon.PokemonId} with {duplicatePokemon.Cp} CP and an IV of { iv }");
@@ -871,8 +875,8 @@ namespace PokemonGo.RocketAPI.GUI
                     return;
                 }
 
-                Logger.Write("Waiting 10 seconds before moving to the next Pokestop.");
-                await Task.Delay(2000);
+                Logger.Write("Waiting before moving to the next Pokestop.");
+                await Task.Delay(UserSettings.Default.pokestopDelay * 1000);
             }
         }
 
@@ -892,7 +896,7 @@ namespace PokemonGo.RocketAPI.GUI
                 var pokemonIv = Logic.Logic.CalculatePokemonPerfection(encounterPokemonResponse?.WildPokemon?.PokemonData).ToString("0.00") + "%";
                 var pokeball = await GetBestBall(pokemonCp);
 
-                Logger.Write($"Fighting {pokemon.PokemonId} with Capture Probability of {(encounterPokemonResponse?.CaptureProbability.CaptureProbability_.First()) * 100:0.0}%");
+                Logger.Write($"Fighting {pokemon.PokemonId} with Capture Probability of {(encounterPokemonResponse?.CaptureProbability.CaptureProbability_.First())*100:0.0}%");
 
                 boxPokemonName.Text = pokemon.PokemonId.ToString();
                 boxPokemonCaughtProb.Text = (encounterPokemonResponse?.CaptureProbability.CaptureProbability_.First() * 100).ToString() + @"%";
@@ -900,7 +904,7 @@ namespace PokemonGo.RocketAPI.GUI
                 CatchPokemonResponse caughtPokemonResponse;
                 do
                 {
-                    if (encounterPokemonResponse?.CaptureProbability.CaptureProbability_.First() < 0.4)
+                    if (encounterPokemonResponse?.CaptureProbability.CaptureProbability_.First() < (UserSettings.Default.minBerry / 100))
                     {
                         //Throw berry if we can
                         await UseBerry(pokemon.EncounterId, pokemon.SpawnpointId);
@@ -929,7 +933,7 @@ namespace PokemonGo.RocketAPI.GUI
                 else
                 {
                     // Add Row to the DataGrid
-                    dGrid.Rows.Insert(0, "Ran Away", pokemon.PokemonId.ToString(), encounterPokemonResponse?.WildPokemon?.PokemonData?.Cp, pokemonIv);
+                    dGrid.Rows.Insert(0, "Flew Away", pokemon.PokemonId.ToString(), encounterPokemonResponse?.WildPokemon?.PokemonData?.Cp, pokemonIv);
                 }
 
                 boxPokemonName.Clear();
@@ -943,8 +947,8 @@ namespace PokemonGo.RocketAPI.GUI
                     return;
                 }
 
-                Logger.Write("Waiting 10 seconds before moving to the next Pokemon.");
-                await Task.Delay(2000);
+                Logger.Write("Waiting before moving to the next Pokemon.");
+                await Task.Delay(UserSettings.Default.pokemonDelay * 1000);
             }
         }
 
@@ -977,6 +981,12 @@ namespace PokemonGo.RocketAPI.GUI
         {
             var myPokemonsListForm = new PokemonForm(_client);
             myPokemonsListForm.ShowDialog();
+        }
+
+        private void btnadvoptions_Click(object sender, EventArgs e)
+        {
+            Options opts = new Options();
+            opts.Show();
         }
     }
 }

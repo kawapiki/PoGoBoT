@@ -19,10 +19,14 @@ namespace PokemonGo.RocketAPI.GUI
         public LoginForm()
         {
             InitializeComponent();
+            LoadSettings();
         }
 
-        private void LoginForm_Load(object sender, EventArgs e)
+        private void LoadSettings()
         {
+            boxUsername.Text = UserSettings.Default.PtcUsername;
+            boxPassword.Text = UserSettings.Default.PtcPassword;
+            comboLoginMethod.SelectedItem = UserSettings.Default.AuthType;
         }
 
         private void btnPtcLogin_Click(object sender, EventArgs e)
@@ -31,6 +35,12 @@ namespace PokemonGo.RocketAPI.GUI
             {
                 if (!string.IsNullOrWhiteSpace(boxPassword.Text))
                 {
+                    //SAVE SETTINGS
+                    UserSettings.Default.PtcUsername = boxUsername.Text;
+                    UserSettings.Default.PtcPassword = boxPassword.Text;
+                    UserSettings.Default.AuthType = comboLoginMethod.Text;
+                    UserSettings.Default.Save();
+
                     loginSelected = true;
                     auth = (AuthType)Enum.Parse(typeof(AuthType), comboLoginMethod.SelectedItem.ToString());
                     this.Hide();

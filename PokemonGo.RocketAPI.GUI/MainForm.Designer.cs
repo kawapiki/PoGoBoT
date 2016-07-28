@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbEvolve = new System.Windows.Forms.CheckBox();
+            this.cbTransfer = new System.Windows.Forms.CheckBox();
             this.btnUseIncense = new System.Windows.Forms.Button();
             this.btnLuckyEgg = new System.Windows.Forms.Button();
             this.btnStopFarming = new System.Windows.Forms.Button();
@@ -70,8 +72,6 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.btnadvoptions = new System.Windows.Forms.Button();
             this.MainMap = new GMap.NET.WindowsForms.GMapControl();
-            this.cbTransfer = new System.Windows.Forms.CheckBox();
-            this.cbEvolve = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -95,6 +95,28 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Farming Control";
+            // 
+            // cbEvolve
+            // 
+            this.cbEvolve.AutoSize = true;
+            this.cbEvolve.Enabled = false;
+            this.cbEvolve.Location = new System.Drawing.Point(11, 95);
+            this.cbEvolve.Name = "cbEvolve";
+            this.cbEvolve.Size = new System.Drawing.Size(112, 17);
+            this.cbEvolve.TabIndex = 10;
+            this.cbEvolve.Text = "Evolve Pokemons";
+            this.cbEvolve.UseVisualStyleBackColor = true;
+            // 
+            // cbTransfer
+            // 
+            this.cbTransfer.AutoSize = true;
+            this.cbTransfer.Enabled = false;
+            this.cbTransfer.Location = new System.Drawing.Point(11, 77);
+            this.cbTransfer.Name = "cbTransfer";
+            this.cbTransfer.Size = new System.Drawing.Size(118, 17);
+            this.cbTransfer.TabIndex = 9;
+            this.cbTransfer.Text = "Transfer Pokemons";
+            this.cbTransfer.UseVisualStyleBackColor = true;
             // 
             // btnUseIncense
             // 
@@ -515,6 +537,7 @@
             this.btnadvoptions.TabIndex = 13;
             this.btnadvoptions.Text = "Advanced Options";
             this.btnadvoptions.UseVisualStyleBackColor = true;
+            this.btnadvoptions.Click += new System.EventHandler(this.btnadvoptions_Click);
             // 
             // MainMap
             // 
@@ -542,28 +565,6 @@
             this.MainMap.Size = new System.Drawing.Size(413, 189);
             this.MainMap.TabIndex = 14;
             this.MainMap.Zoom = 0D;
-            // 
-            // cbTransfer
-            // 
-            this.cbTransfer.AutoSize = true;
-            this.cbTransfer.Enabled = false;
-            this.cbTransfer.Location = new System.Drawing.Point(11, 77);
-            this.cbTransfer.Name = "cbTransfer";
-            this.cbTransfer.Size = new System.Drawing.Size(118, 17);
-            this.cbTransfer.TabIndex = 9;
-            this.cbTransfer.Text = "Transfer Pokemons";
-            this.cbTransfer.UseVisualStyleBackColor = true;
-            // 
-            // cbEvolve
-            // 
-            this.cbEvolve.AutoSize = true;
-            this.cbEvolve.Enabled = false;
-            this.cbEvolve.Location = new System.Drawing.Point(11, 95);
-            this.cbEvolve.Name = "cbEvolve";
-            this.cbEvolve.Size = new System.Drawing.Size(112, 17);
-            this.cbEvolve.TabIndex = 10;
-            this.cbEvolve.Text = "Evolve Pokemons";
-            this.cbEvolve.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
