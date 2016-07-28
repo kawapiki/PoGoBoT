@@ -76,5 +76,13 @@ namespace PokemonGo.RocketAPI.GUI
 
             btnGoogleLogin_Click(null, null);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Generate an app password for bot. ?", "Visit", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.Yes)
+            {
+                System.Diagnostics.Process.Start("https://security.google.com/settings/security/apppasswords");
+            }
+        }
     }
 }
