@@ -41,13 +41,14 @@ The contents of this repo are a proof of concept and are for educational use onl
  - [Humanlike Walking]
  - [Configurable Custom Pathing]
 
-# Credits
-- [FeroxRev](https://github.com/FeroxRev/Pokemon-Go-Rocket-API) (Legacy Link)
-- [NecronomiconCoding](https://github.com/NecronomiconCoding/Pokemon-Go-Bot) (Active)
-
 # FAQ
 - You need .NET Framework 4.5 to run this (https://www.microsoft.com/en-ca/download/details.aspx?id=30653)
 
 # Donation
 - [CreditCard](https://www.phaopay.com/donate/)
 - BTC : 1L1tQW2MH3xfc3AzV6DbnVBCexDfR1GEM1
+
+# Credits
+- FeroxRev
+- NecroBot
+- Novalys
