@@ -10,6 +10,7 @@ using PokemonGo.RocketAPI.Extensions;
 using PokemonGo.RocketAPI.Logic.Utils;
 using System.IO;
 using PokemonGo.RocketAPI.Exceptions;
+using GMap.NET.MapProviders;
 
 namespace PokemonGo.RocketAPI.GUI
 {
@@ -53,6 +54,20 @@ namespace PokemonGo.RocketAPI.GUI
             // Clear Experience
             _totalExperience = 0;
             _pokemonCaughtCount = 0;
+        }
+        private void SetupLocationMap()
+        {
+            MainMap.DragButton = MouseButtons.Left;
+            MainMap.MapProvider = GMapProviders.BingMap;
+            MainMap.Position = new GMap.NET.PointLatLng(UserSettings.Default.DefaultLatitude, UserSettings.Default.DefaultLongitude);
+            MainMap.MinZoom = 0;
+            MainMap.MaxZoom = 24;
+            MainMap.Zoom = 15;
+        }
+
+        private void UpdateMap(double lat, double lng)
+        {
+            MainMap.Position = new GMap.NET.PointLatLng(lat, lng);
         }
 
         private async void MainForm_Load(object sender, EventArgs e)
@@ -99,6 +114,9 @@ namespace PokemonGo.RocketAPI.GUI
 
             // Close the Location Window
             locationSelect.Close();
+
+            // Setup MiniMap
+            SetupLocationMap();
         }
 
         private async Task DisplayLoginWindow()
@@ -216,6 +234,8 @@ namespace PokemonGo.RocketAPI.GUI
             cbKeepPkToEvolve.Enabled = true;
             btnMyPokemon.Enabled = true;
             btnExtraPlayerInformation.Enabled = true;
+            cbTransfer.Enabled = true;
+            cbEvolve.Enabled = true;
 
             Logger.Write("Ready to Work.");
         }
@@ -317,6 +337,8 @@ namespace PokemonGo.RocketAPI.GUI
             btnRecycleItems.Enabled = false;
             btnTransferDuplicates.Enabled = false;
             cbKeepPkToEvolve.Enabled = false;
+            cbTransfer.Enabled = false;
+            cbEvolve.Enabled = false;
 
 
             btnStopFarming.Enabled = true;
@@ -332,6 +354,8 @@ namespace PokemonGo.RocketAPI.GUI
             btnRecycleItems.Enabled = true;
             btnTransferDuplicates.Enabled = true;
             cbKeepPkToEvolve.Enabled = true;
+            cbTransfer.Enabled = true;
+            cbEvolve.Enabled = true;
 
             btnStopFarming.Enabled = false;
 
@@ -428,23 +452,40 @@ namespace PokemonGo.RocketAPI.GUI
                     // Only Auto-Evolve/Transfer when Continuous.
                     if (_isFarmingActive)
                     {
-                        // Evolve Pokemons.
-                        await EvolveAllPokemonWithEnoughCandy();
+                        if (cbEvolve.Checked == true) {
+                            // Evolve Pokemons.
+                            await EvolveAllPokemonWithEnoughCandy();
+                        }
 
-                        // Transfer Duplicates.
-                        await TransferDuplicatePokemon();
+                        if (cbTransfer.Checked == true) { 
+                            // Transfer Duplicates.
+                            await TransferDuplicatePokemon();
+                        }
                     }
                 }
                 catch (InvalidResponseException)
                 {
                     Logger.Write("------------> InvalidReponseException");
+                    Logger.Write("<------------ Recovering");
+
+                    // Re-Authenticate with Server
+                    switch (_loginMethod)
+                    {
+                        case AuthType.Ptc:
+                            await LoginPtc(_usernamePTC, _passwordPTC);
+                            break;
+
+                        case AuthType.Google:
+                            await LoginGoogle();
+                            break;
+                    }
+
+                    // Disable Buttons
+                    disableButtonsDuringFarming();
                 }
                 catch (Exception)
                 {
                     Logger.Write("------------> GeneralException");
-                }
-                finally
-                {
                     Logger.Write("<------------ Recovering");
 
                     // Re-Authenticate with Server
@@ -803,6 +844,7 @@ namespace PokemonGo.RocketAPI.GUI
             foreach (var pokeStop in fortDatas)
             {
                 var update = await _client.UpdatePlayerLocation(pokeStop.Latitude, pokeStop.Longitude, _settings.DefaultAltitude); // Redundant?
+                UpdateMap(pokeStop.Latitude, pokeStop.Longitude);
                 var fortInfo = await _client.GetFort(pokeStop.Id, pokeStop.Latitude, pokeStop.Longitude);
 
                 boxPokestopName.Text = fortInfo.Name;

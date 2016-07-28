@@ -69,6 +69,9 @@
             this.lbcopyright = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.btnadvoptions = new System.Windows.Forms.Button();
+            this.MainMap = new GMap.NET.WindowsForms.GMapControl();
+            this.cbTransfer = new System.Windows.Forms.CheckBox();
+            this.cbEvolve = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -80,13 +83,15 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbEvolve);
+            this.groupBox1.Controls.Add(this.cbTransfer);
             this.groupBox1.Controls.Add(this.btnUseIncense);
             this.groupBox1.Controls.Add(this.btnLuckyEgg);
             this.groupBox1.Controls.Add(this.btnStopFarming);
             this.groupBox1.Controls.Add(this.btnStartFarming);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(201, 167);
+            this.groupBox1.Size = new System.Drawing.Size(201, 211);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Farming Control";
@@ -94,7 +99,7 @@
             // btnUseIncense
             // 
             this.btnUseIncense.Enabled = false;
-            this.btnUseIncense.Location = new System.Drawing.Point(6, 133);
+            this.btnUseIncense.Location = new System.Drawing.Point(6, 179);
             this.btnUseIncense.Name = "btnUseIncense";
             this.btnUseIncense.Size = new System.Drawing.Size(189, 23);
             this.btnUseIncense.TabIndex = 8;
@@ -105,7 +110,7 @@
             // btnLuckyEgg
             // 
             this.btnLuckyEgg.Enabled = false;
-            this.btnLuckyEgg.Location = new System.Drawing.Point(6, 106);
+            this.btnLuckyEgg.Location = new System.Drawing.Point(6, 152);
             this.btnLuckyEgg.Name = "btnLuckyEgg";
             this.btnLuckyEgg.Size = new System.Drawing.Size(189, 23);
             this.btnLuckyEgg.TabIndex = 7;
@@ -116,7 +121,7 @@
             // btnStopFarming
             // 
             this.btnStopFarming.Enabled = false;
-            this.btnStopFarming.Location = new System.Drawing.Point(6, 77);
+            this.btnStopFarming.Location = new System.Drawing.Point(6, 123);
             this.btnStopFarming.Name = "btnStopFarming";
             this.btnStopFarming.Size = new System.Drawing.Size(189, 23);
             this.btnStopFarming.TabIndex = 1;
@@ -141,7 +146,7 @@
             this.cbKeepPkToEvolve.Checked = true;
             this.cbKeepPkToEvolve.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbKeepPkToEvolve.Enabled = false;
-            this.cbKeepPkToEvolve.Location = new System.Drawing.Point(6, 77);
+            this.cbKeepPkToEvolve.Location = new System.Drawing.Point(11, 77);
             this.cbKeepPkToEvolve.Name = "cbKeepPkToEvolve";
             this.cbKeepPkToEvolve.Size = new System.Drawing.Size(181, 17);
             this.cbKeepPkToEvolve.TabIndex = 5;
@@ -186,7 +191,7 @@
             this.groupBox3.Controls.Add(this.lbPkmnCaptured);
             this.groupBox3.Controls.Add(this.lbPkmnHr);
             this.groupBox3.Controls.Add(this.lbExpHour);
-            this.groupBox3.Location = new System.Drawing.Point(12, 406);
+            this.groupBox3.Location = new System.Drawing.Point(12, 374);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(201, 74);
             this.groupBox3.TabIndex = 2;
@@ -233,7 +238,7 @@
             this.groupBox4.Controls.Add(this.lbExperience);
             this.groupBox4.Controls.Add(this.lbLevel);
             this.groupBox4.Controls.Add(this.lbName);
-            this.groupBox4.Location = new System.Drawing.Point(12, 486);
+            this.groupBox4.Location = new System.Drawing.Point(12, 454);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(201, 136);
             this.groupBox4.TabIndex = 4;
@@ -328,7 +333,7 @@
             this.dGrid.AllowUserToDeleteRows = false;
             this.dGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGrid.Location = new System.Drawing.Point(219, 91);
+            this.dGrid.Location = new System.Drawing.Point(219, 286);
             this.dGrid.Name = "dGrid";
             this.dGrid.ReadOnly = true;
             this.dGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -337,11 +342,11 @@
             // 
             // loggingBox
             // 
-            this.loggingBox.Location = new System.Drawing.Point(219, 357);
+            this.loggingBox.Location = new System.Drawing.Point(219, 552);
             this.loggingBox.Multiline = true;
             this.loggingBox.Name = "loggingBox";
             this.loggingBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.loggingBox.Size = new System.Drawing.Size(413, 265);
+            this.loggingBox.Size = new System.Drawing.Size(413, 96);
             this.loggingBox.TabIndex = 5;
             // 
             // groupBox2
@@ -470,9 +475,9 @@
             // btnMyPokemon
             // 
             this.btnMyPokemon.Enabled = false;
-            this.btnMyPokemon.Location = new System.Drawing.Point(219, 628);
+            this.btnMyPokemon.Location = new System.Drawing.Point(12, 596);
             this.btnMyPokemon.Name = "btnMyPokemon";
-            this.btnMyPokemon.Size = new System.Drawing.Size(413, 23);
+            this.btnMyPokemon.Size = new System.Drawing.Size(201, 23);
             this.btnMyPokemon.TabIndex = 8;
             this.btnMyPokemon.Text = "My Pokemon";
             this.btnMyPokemon.UseVisualStyleBackColor = true;
@@ -482,7 +487,7 @@
             // 
             this.lbcopyright.AutoSize = true;
             this.lbcopyright.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbcopyright.Location = new System.Drawing.Point(523, 660);
+            this.lbcopyright.Location = new System.Drawing.Point(520, 657);
             this.lbcopyright.Name = "lbcopyright";
             this.lbcopyright.Size = new System.Drawing.Size(119, 7);
             this.lbcopyright.TabIndex = 9;
@@ -494,7 +499,7 @@
             this.groupBox6.Controls.Add(this.btnEvolvePokemons);
             this.groupBox6.Controls.Add(this.cbKeepPkToEvolve);
             this.groupBox6.Controls.Add(this.btnTransferDuplicates);
-            this.groupBox6.Location = new System.Drawing.Point(12, 185);
+            this.groupBox6.Location = new System.Drawing.Point(12, 229);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(201, 139);
             this.groupBox6.TabIndex = 9;
@@ -504,18 +509,68 @@
             // btnadvoptions
             // 
             this.btnadvoptions.Enabled = false;
-            this.btnadvoptions.Location = new System.Drawing.Point(12, 628);
+            this.btnadvoptions.Location = new System.Drawing.Point(12, 625);
             this.btnadvoptions.Name = "btnadvoptions";
             this.btnadvoptions.Size = new System.Drawing.Size(201, 23);
             this.btnadvoptions.TabIndex = 13;
             this.btnadvoptions.Text = "Advanced Options";
             this.btnadvoptions.UseVisualStyleBackColor = true;
             // 
+            // MainMap
+            // 
+            this.MainMap.Bearing = 0F;
+            this.MainMap.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.MainMap.CanDragMap = true;
+            this.MainMap.EmptyTileColor = System.Drawing.Color.Navy;
+            this.MainMap.Enabled = false;
+            this.MainMap.GrayScaleMode = false;
+            this.MainMap.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
+            this.MainMap.LevelsKeepInMemmory = 5;
+            this.MainMap.Location = new System.Drawing.Point(219, 91);
+            this.MainMap.MarkersEnabled = true;
+            this.MainMap.MaxZoom = 2;
+            this.MainMap.MinZoom = 2;
+            this.MainMap.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
+            this.MainMap.Name = "MainMap";
+            this.MainMap.NegativeMode = false;
+            this.MainMap.PolygonsEnabled = true;
+            this.MainMap.RetryLoadTile = 0;
+            this.MainMap.RoutesEnabled = true;
+            this.MainMap.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
+            this.MainMap.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
+            this.MainMap.ShowTileGridLines = false;
+            this.MainMap.Size = new System.Drawing.Size(413, 189);
+            this.MainMap.TabIndex = 14;
+            this.MainMap.Zoom = 0D;
+            // 
+            // cbTransfer
+            // 
+            this.cbTransfer.AutoSize = true;
+            this.cbTransfer.Enabled = false;
+            this.cbTransfer.Location = new System.Drawing.Point(11, 77);
+            this.cbTransfer.Name = "cbTransfer";
+            this.cbTransfer.Size = new System.Drawing.Size(118, 17);
+            this.cbTransfer.TabIndex = 9;
+            this.cbTransfer.Text = "Transfer Pokemons";
+            this.cbTransfer.UseVisualStyleBackColor = true;
+            // 
+            // cbEvolve
+            // 
+            this.cbEvolve.AutoSize = true;
+            this.cbEvolve.Enabled = false;
+            this.cbEvolve.Location = new System.Drawing.Point(11, 95);
+            this.cbEvolve.Name = "cbEvolve";
+            this.cbEvolve.Size = new System.Drawing.Size(112, 17);
+            this.cbEvolve.TabIndex = 10;
+            this.cbEvolve.Text = "Evolve Pokemons";
+            this.cbEvolve.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(644, 670);
+            this.Controls.Add(this.MainMap);
             this.Controls.Add(this.btnadvoptions);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.lbcopyright);
@@ -536,6 +591,7 @@
             this.Text = "PoGoBoT - GUI";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -594,6 +650,9 @@
         private System.Windows.Forms.Label lbcopyright;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Button btnadvoptions;
+        private GMap.NET.WindowsForms.GMapControl MainMap;
+        private System.Windows.Forms.CheckBox cbEvolve;
+        private System.Windows.Forms.CheckBox cbTransfer;
     }
 }
 
