@@ -45,8 +45,8 @@ The contents of this repo are a proof of concept and are for educational use onl
 - [FeroxRev](https://github.com/FeroxRev/Pokemon-Go-Rocket-API) (Legacy Link)
 - [NecronomiconCoding](https://github.com/NecronomiconCoding/Pokemon-Go-Bot) (Active)
 
-# Credits
-You need .NET Framework 4.5 to run this (https://www.microsoft.com/en-ca/download/details.aspx?id=30653)
+# FAQ
+- You need .NET Framework 4.5 to run this (https://www.microsoft.com/en-ca/download/details.aspx?id=30653)
 
 # Donation
 - [CreditCard](https://www.phaopay.com/donate/)
