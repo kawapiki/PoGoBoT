@@ -44,5 +44,14 @@
     <Setting Name="DefaultLongitude" Type="System.Double" Scope="User">
       <Value Profile="(Default)">-0.14102</Value>
     </Setting>
+    <Setting Name="pokestopDelay" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="pokemonDelay" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="minBerry" Type="System.Single" Scope="User">
+      <Value Profile="(Default)">40</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
