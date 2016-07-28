@@ -32,7 +32,7 @@ namespace PokemonGo.RocketAPI.GUI
                 if (!string.IsNullOrWhiteSpace(boxPassword.Text))
                 {
                     loginSelected = true;
-                    auth = AuthType.Ptc;
+                    auth = (AuthType)Enum.Parse(typeof(AuthType), comboLoginMethod.SelectedItem.ToString());
                     this.Hide();
                 }
                 else

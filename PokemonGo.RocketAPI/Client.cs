@@ -13,6 +13,7 @@ using PokemonGo.RocketAPI.GeneratedCode;
 using PokemonGo.RocketAPI.Helpers;
 using PokemonGo.RocketAPI.Login;
 using static PokemonGo.RocketAPI.GeneratedCode.Response.Types;
+using System.Windows.Forms;
 
 #endregion
 
@@ -105,32 +106,17 @@ namespace PokemonGo.RocketAPI
                     _httpClient.PostProtoPayload<Request, CatchPokemonResponse>($"https://{_apiUrl}/rpc",
                         catchPokemonRequest);
         }
-
-        public async Task DoGoogleLogin()
+        
+        public void DoGoogleLogin(string username, string password)
         {
             _authType = AuthType.Google;
-
-            GoogleLogin.TokenResponseModel tokenResponse;
-            if (Settings.GoogleRefreshToken != string.Empty)
-            {
-                tokenResponse = await GoogleLogin.GetAccessToken(Settings.GoogleRefreshToken);
-                AccessToken = tokenResponse?.id_token;
-            }
-
-            if (AccessToken == null)
-            {
-                var deviceCode = await GoogleLogin.GetDeviceCode();
-                tokenResponse = await GoogleLogin.GetAccessToken(deviceCode);
-                Settings.GoogleRefreshToken = tokenResponse?.refresh_token;
-                Logger.Write("Refreshtoken " + tokenResponse?.refresh_token + " saved");
-                AccessToken = tokenResponse?.id_token;
-            }
+            AccessToken = GoogleLoginGPSOAuth.DoLogin(username, password);
         }
 
         public async Task DoPtcLogin(string username, string password)
         {
-            AccessToken = await PtcLogin.GetAccessToken(username, password);
             _authType = AuthType.Ptc;
+            AccessToken = await PtcLogin.GetAccessToken(username, password);            
         }
 
         public async Task<EncounterResponse> EncounterPokemon(ulong encounterId, string spawnPointGuid)
