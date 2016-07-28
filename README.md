@@ -1,18 +1,32 @@
-<!-- title -->
-<h1>A Pokemon Go Bot based on FeroxRevs API</h1>
+# A Pokemon Go Bot based on FeroxRevs API
 ![Application Demo](http://i.imgur.com/Ww9Zhs8.png)
 ![Application Demo](http://i.imgur.com/itL4ygm.png)
 ![Application Demo](http://i.imgur.com/duSyDmr.png)
 ![Application Demo](http://i.imgur.com/ZNfCFBy.png)
 
-<!-- disclaimer -->
-<strong><em>The contents of this repo are a proof of concept and are for educational use only</em></strong>
-<br/><br/>
-Chatting about this Repository can be done on our Discord: https://discord.gg/beVKFJR<br/>
-<br/>
+# Disclaimer
+The contents of this repo are a proof of concept and are for educational use only
 
-<h2><a name="features">Features</a></h2>
+# Support Chat
+[Discord Channel](https://discord.gg/beVKFJR)
 
+# How to Use
+## The Simple
+- Download the [Latest Release](https://github.com/WooAf/PoGoBoT/releases/latest)
+- Extracts the contents of the zip file.
+- Open the PoGoBot-GUI.exe file.
+- That's it! Just enter your credentials, select your starting location from the map and start farming.
+
+## The Advanced
+- Download Visual Studio 2015.
+- Clone this Repository.
+- Open the Pokemon PoGoBoT.sln (VS Solution File)
+- On the Solution Explorer Menu right click "Pokemon.Go.RocketAPI.GUI" and select "Set as Startup Project"
+- Press F5
+- Enter your credentials, select your starting location from the map and start farming.
+- Check what could be improved, fork this repo and help everyone by improving this.
+
+# Features
  - [GUI]
  - [PTC Login / Google]
  - [Get Map Objects and Inventory]
@@ -27,13 +41,13 @@ Chatting about this Repository can be done on our Discord: https://discord.gg/be
  - [Humanlike Walking]
  - [Configurable Custom Pathing]
 
-<h2><a name="credits">Credits</a></h2>
-This release is based on Necro and Feroxs source.
+# Credits
+- [FeroxRev](https://github.com/FeroxRev/Pokemon-Go-Rocket-API) (Legacy Link)
+- [NecronomiconCoding](https://github.com/NecronomiconCoding/Pokemon-Go-Bot) (Active)
 
-<h2><a name="faq">FAQ</a></h2>
+# Credits
 You need .NET Framework 4.5 to run this (https://www.microsoft.com/en-ca/download/details.aspx?id=30653)
 
-<h2><a name="donation">Donation</a></h2>
-<a href="https://www.phaopay.com/donate/">Donate via Stripe (CreditCard)</a>
-<br>
-BTC : 1L1tQW2MH3xfc3AzV6DbnVBCexDfR1GEM1
+# Donation
+- [CreditCard](https://www.phaopay.com/donate/)
+- BTC : 1L1tQW2MH3xfc3AzV6DbnVBCexDfR1GEM1
