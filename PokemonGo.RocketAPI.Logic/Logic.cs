@@ -47,7 +47,7 @@ namespace PokemonGo.RocketAPI.Logic
                     CalculatePokemonPerfection(encounter?.WildPokemon?.PokemonData) >=
                     _clientSettings.KeepMinIVPercentage)
                 {
-                    //Throw berry is we can
+                    //Throw berry if we can
                     await UseBerry(pokemon.EncounterId, pokemon.SpawnpointId);
                 }
 

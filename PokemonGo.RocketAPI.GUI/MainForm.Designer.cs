@@ -30,9 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cbEvolveFarming = new System.Windows.Forms.CheckBox();
             this.btnUseIncense = new System.Windows.Forms.Button();
-            this.cbTransferFarming = new System.Windows.Forms.CheckBox();
             this.btnLuckyEgg = new System.Windows.Forms.Button();
             this.btnStopFarming = new System.Windows.Forms.Button();
             this.btnStartFarming = new System.Windows.Forms.Button();
@@ -71,7 +69,6 @@
             this.lbcopyright = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.btnadvoptions = new System.Windows.Forms.Button();
-            this.cbMode = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -83,35 +80,21 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.cbMode);
-            this.groupBox1.Controls.Add(this.cbEvolveFarming);
             this.groupBox1.Controls.Add(this.btnUseIncense);
-            this.groupBox1.Controls.Add(this.cbTransferFarming);
             this.groupBox1.Controls.Add(this.btnLuckyEgg);
             this.groupBox1.Controls.Add(this.btnStopFarming);
             this.groupBox1.Controls.Add(this.btnStartFarming);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(201, 209);
+            this.groupBox1.Size = new System.Drawing.Size(201, 167);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Farming Control";
             // 
-            // cbEvolveFarming
-            // 
-            this.cbEvolveFarming.AutoSize = true;
-            this.cbEvolveFarming.Enabled = false;
-            this.cbEvolveFarming.Location = new System.Drawing.Point(7, 94);
-            this.cbEvolveFarming.Name = "cbEvolveFarming";
-            this.cbEvolveFarming.Size = new System.Drawing.Size(112, 17);
-            this.cbEvolveFarming.TabIndex = 15;
-            this.cbEvolveFarming.Text = "Evolve Pokemons";
-            this.cbEvolveFarming.UseVisualStyleBackColor = true;
-            // 
             // btnUseIncense
             // 
             this.btnUseIncense.Enabled = false;
-            this.btnUseIncense.Location = new System.Drawing.Point(6, 176);
+            this.btnUseIncense.Location = new System.Drawing.Point(6, 133);
             this.btnUseIncense.Name = "btnUseIncense";
             this.btnUseIncense.Size = new System.Drawing.Size(189, 23);
             this.btnUseIncense.TabIndex = 8;
@@ -119,21 +102,10 @@
             this.btnUseIncense.UseVisualStyleBackColor = true;
             this.btnUseIncense.Click += new System.EventHandler(this.btnUseIncense_Click);
             // 
-            // cbTransferFarming
-            // 
-            this.cbTransferFarming.AutoSize = true;
-            this.cbTransferFarming.Enabled = false;
-            this.cbTransferFarming.Location = new System.Drawing.Point(7, 76);
-            this.cbTransferFarming.Name = "cbTransferFarming";
-            this.cbTransferFarming.Size = new System.Drawing.Size(118, 17);
-            this.cbTransferFarming.TabIndex = 14;
-            this.cbTransferFarming.Text = "Transfer Pokemons";
-            this.cbTransferFarming.UseVisualStyleBackColor = true;
-            // 
             // btnLuckyEgg
             // 
             this.btnLuckyEgg.Enabled = false;
-            this.btnLuckyEgg.Location = new System.Drawing.Point(6, 149);
+            this.btnLuckyEgg.Location = new System.Drawing.Point(6, 106);
             this.btnLuckyEgg.Name = "btnLuckyEgg";
             this.btnLuckyEgg.Size = new System.Drawing.Size(189, 23);
             this.btnLuckyEgg.TabIndex = 7;
@@ -144,7 +116,7 @@
             // btnStopFarming
             // 
             this.btnStopFarming.Enabled = false;
-            this.btnStopFarming.Location = new System.Drawing.Point(6, 120);
+            this.btnStopFarming.Location = new System.Drawing.Point(6, 77);
             this.btnStopFarming.Name = "btnStopFarming";
             this.btnStopFarming.Size = new System.Drawing.Size(189, 23);
             this.btnStopFarming.TabIndex = 1;
@@ -155,9 +127,9 @@
             // btnStartFarming
             // 
             this.btnStartFarming.Enabled = false;
-            this.btnStartFarming.Location = new System.Drawing.Point(6, 48);
+            this.btnStartFarming.Location = new System.Drawing.Point(6, 22);
             this.btnStartFarming.Name = "btnStartFarming";
-            this.btnStartFarming.Size = new System.Drawing.Size(189, 23);
+            this.btnStartFarming.Size = new System.Drawing.Size(189, 49);
             this.btnStartFarming.TabIndex = 0;
             this.btnStartFarming.Text = "Start Farming";
             this.btnStartFarming.UseVisualStyleBackColor = true;
@@ -522,7 +494,7 @@
             this.groupBox6.Controls.Add(this.btnEvolvePokemons);
             this.groupBox6.Controls.Add(this.cbKeepPkToEvolve);
             this.groupBox6.Controls.Add(this.btnTransferDuplicates);
-            this.groupBox6.Location = new System.Drawing.Point(12, 261);
+            this.groupBox6.Location = new System.Drawing.Point(12, 185);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(201, 139);
             this.groupBox6.TabIndex = 9;
@@ -538,15 +510,6 @@
             this.btnadvoptions.TabIndex = 13;
             this.btnadvoptions.Text = "Advanced Options";
             this.btnadvoptions.UseVisualStyleBackColor = true;
-            // 
-            // cbMode
-            // 
-            this.cbMode.FormattingEnabled = true;
-            this.cbMode.Location = new System.Drawing.Point(6, 22);
-            this.cbMode.Name = "cbMode";
-            this.cbMode.Size = new System.Drawing.Size(188, 21);
-            this.cbMode.TabIndex = 16;
-            this.cbMode.Text = "Select farming mode";
             // 
             // MainForm
             // 
@@ -573,7 +536,6 @@
             this.Text = "PoGoBoT - GUI";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -632,9 +594,6 @@
         private System.Windows.Forms.Label lbcopyright;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Button btnadvoptions;
-        private System.Windows.Forms.CheckBox cbEvolveFarming;
-        private System.Windows.Forms.CheckBox cbTransferFarming;
-        private System.Windows.Forms.ComboBox cbMode;
     }
 }
 
