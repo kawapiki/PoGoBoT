@@ -23,8 +23,8 @@ namespace PokemonGo.RocketAPI.GUI
 
         // Persisting Login Info
         private AuthType _loginMethod;
-        private string _usernamePTC;
-        private string _passwordPTC;
+        private string _username;
+        private string _password;
 
         private bool _isFarmingActive;
 
@@ -135,7 +135,7 @@ namespace PokemonGo.RocketAPI.GUI
             if (loginForm.auth == AuthType.Ptc)
                 await LoginPtc(loginForm.boxUsername.Text, loginForm.boxPassword.Text);
             if (loginForm.auth == AuthType.Google)
-                await LoginGoogle();
+                await LoginGoogle(loginForm.boxUsername.Text, loginForm.boxPassword.Text);
 
             // Select the Location
             Logger.Write("Select Starting Location...");
@@ -151,12 +151,14 @@ namespace PokemonGo.RocketAPI.GUI
             Logger.SetLogger(guiLog);
         }
 
-        private async Task LoginGoogle()
+        private async Task LoginGoogle(string username, string password)
         {
             try
             {
                 // Login Method
                 _loginMethod = AuthType.Google;
+                _username = username;
+                _password = password;
 
                 // Creating the Settings
                 Logger.Write("Adjusting the Settings.");
@@ -166,7 +168,7 @@ namespace PokemonGo.RocketAPI.GUI
                 // Begin Login
                 Logger.Write("Trying to Login with Google Token...");
                 Client client = new Client(_settings);
-                await client.DoGoogleLogin();
+                client.DoGoogleLogin(username, password);
                 await client.SetServer();
 
                 // Server Ready
@@ -192,8 +194,8 @@ namespace PokemonGo.RocketAPI.GUI
             {
                 // Login Method
                 _loginMethod = AuthType.Ptc;
-                _usernamePTC = username;
-                _passwordPTC = password;
+                _username = username;
+                _password = password;
 
                 // Creating the Settings
                 Logger.Write("Adjusting the Settings.");
@@ -472,11 +474,11 @@ namespace PokemonGo.RocketAPI.GUI
                     switch (_loginMethod)
                     {
                         case AuthType.Ptc:
-                            await LoginPtc(_usernamePTC, _passwordPTC);
+                            await LoginPtc(_username, _password);
                             break;
 
                         case AuthType.Google:
-                            await LoginGoogle();
+                            await LoginGoogle(_username, _password);
                             break;
                     }
 
@@ -492,11 +494,11 @@ namespace PokemonGo.RocketAPI.GUI
                     switch (_loginMethod)
                     {
                         case AuthType.Ptc:
-                            await LoginPtc(_usernamePTC, _passwordPTC);
+                            await LoginPtc(_username, _password);
                             break;
 
                         case AuthType.Google:
-                            await LoginGoogle();
+                            await LoginGoogle(_username, _password);
                             break;
                     }
 
